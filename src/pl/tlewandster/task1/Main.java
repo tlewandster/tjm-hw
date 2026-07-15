@@ -25,7 +25,8 @@ public class Main {
         getVatRate();
         System.out.println(SET_GREEN_FONT + "9. Mini kalkulator" + RESET_FONT_COLOR);
         miniCalc();
-
+        System.out.println(SET_GREEN_FONT + "10. Sprawdzenie hasła" + RESET_FONT_COLOR);
+        validatePass();
     }
 
     private static void verifyAge() {
@@ -202,4 +203,19 @@ public class Main {
         }
         askRepeat(Main::miniCalc);
     }
+
+    private static void validatePass() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Wpisz proponowane hasło: ");
+        String pass = scanner.nextLine();
+        if (pass.length() < 8) {
+            System.out.println("Hasło za krótkie");
+        } else if (Character.isLowerCase(pass.charAt(0))) {
+            System.out.println("Hasło musi zaczynać się wielką literą");
+        } else {
+            System.out.println("OK");
+        }
+        askRepeat(Main::validatePass);
+    }
+
 }
