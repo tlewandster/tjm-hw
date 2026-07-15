@@ -19,6 +19,8 @@ public class Main {
         getNameOfDayClassicWay();
         System.out.println(SET_GREEN_FONT + "6. Dzień tygodnia – nowy" + RESET_FONT_COLOR);
         getNameOfDayNewWay();
+        System.out.println(SET_GREEN_FONT + "7. Wiek i pełnoletność - operator trójargumentowy" + RESET_FONT_COLOR);
+        verifyAgeWithTernaryOperator();
     }
 
     private static void verifyAge() {
@@ -135,6 +137,13 @@ public class Main {
         };
         System.out.println(nameOfDay);
         askRepeat(Main::getNameOfDayNewWay);
+    }
+
+    private static void verifyAgeWithTernaryOperator() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Podaj wiek użytkownika: ");
+        System.out.println((scanner.nextInt() >= 18) ? "Jesteś pełnoletni" : "Nie jesteś pełnoletni");
+        askRepeat(Main::verifyAgeWithTernaryOperator);
     }
 
 }
