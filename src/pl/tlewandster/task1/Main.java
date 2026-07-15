@@ -9,7 +9,9 @@ public class Main {
 
         System.out.println(SET_GREEN_FONT + "1. Wiek i pełnoletność" + RESET_FONT_COLOR);
         verifyAge();
-        }
+        System.out.println(SET_GREEN_FONT + "2. Parzystość liczby" + RESET_FONT_COLOR);
+        checkNumberEvenness();
+    }
 
     private static void verifyAge() {
         Scanner scanner = new Scanner(System.in);
@@ -31,5 +33,16 @@ public class Main {
         }
     }
 
+    private static void checkNumberEvenness() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Podaj liczbę całkowitą: ");
+        int num = scanner.nextInt();
+        if (num%2==0) {
+            System.out.println(num +" to liczba parzysta");
+        } else {
+            System.out.println(num +" to liczba nieparzysta");
+        }
+        askRepeat(Main::checkNumberEvenness);
+    }
 
 }
