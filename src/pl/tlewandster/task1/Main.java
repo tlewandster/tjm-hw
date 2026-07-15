@@ -1,5 +1,6 @@
 package pl.tlewandster.task1;
 
+import java.time.Year;
 import java.util.Scanner;
 
 public class Main {
@@ -27,6 +28,8 @@ public class Main {
         miniCalc();
         System.out.println(SET_GREEN_FONT + "10. Sprawdzenie hasła" + RESET_FONT_COLOR);
         validatePass();
+        System.out.println(SET_GREEN_FONT + "11. Data - rok przestępny" + RESET_FONT_COLOR);
+        checkLeapYear();
     }
 
     private static void verifyAge() {
@@ -216,6 +219,14 @@ public class Main {
             System.out.println("OK");
         }
         askRepeat(Main::validatePass);
+    }
+
+    private static void checkLeapYear() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Podaj rok: ");
+        int year = scanner.nextInt();
+        System.out.println(year + (Year.isLeap(year) ? " to rok przestępny" :" nie jest rokiem przestępnym"));
+        askRepeat(Main::checkLeapYear);
     }
 
 }
