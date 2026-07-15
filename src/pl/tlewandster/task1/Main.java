@@ -11,6 +11,8 @@ public class Main {
         verifyAge();
         System.out.println(SET_GREEN_FONT + "2. Parzystość liczby" + RESET_FONT_COLOR);
         checkNumberEvenness();
+        System.out.println(SET_GREEN_FONT + "3. Kategoryzacja wieku" + RESET_FONT_COLOR);
+        categorizeByAge();
     }
 
     private static void verifyAge() {
@@ -28,7 +30,7 @@ public class Main {
     private static void askRepeat(Runnable action) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Powtórzyć [t/n] ?");
-        if (scanner.nextLine().equals("t")){
+        if (scanner.nextLine().equals("t")) {
             action.run();
         }
     }
@@ -37,12 +39,28 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Podaj liczbę całkowitą: ");
         int num = scanner.nextInt();
-        if (num%2==0) {
-            System.out.println(num +" to liczba parzysta");
+        if (num % 2 == 0) {
+            System.out.println(num + " to liczba parzysta");
         } else {
-            System.out.println(num +" to liczba nieparzysta");
+            System.out.println(num + " to liczba nieparzysta");
         }
         askRepeat(Main::checkNumberEvenness);
+    }
+
+    private static void categorizeByAge() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Podaj wiek: ");
+        int age = scanner.nextInt();
+        if (age < 12) {
+            System.out.println("Dziecko");
+        } else if (age >= 12 && age <= 17){
+            System.out.println("Nastolatek");
+        } else if (age>=18 && age <=64){
+            System.out.println("Dorosły");
+        } else{
+            System.out.println("Senior");
+        }
+        askRepeat(Main::categorizeByAge);
     }
 
 }
