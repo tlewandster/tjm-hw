@@ -1,5 +1,6 @@
 package pl.tlewandster.task1;
 
+import java.time.MonthDay;
 import java.time.Year;
 import java.util.Scanner;
 
@@ -30,6 +31,9 @@ public class Main {
         validatePass();
         System.out.println(SET_GREEN_FONT + "11. Data - rok przestępny" + RESET_FONT_COLOR);
         checkLeapYear();
+        System.out.println(SET_GREEN_FONT + "12. Data - poprawność" + RESET_FONT_COLOR);
+        validateDate();
+
     }
 
     private static void verifyAge() {
@@ -225,8 +229,25 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Podaj rok: ");
         int year = scanner.nextInt();
-        System.out.println(year + (Year.isLeap(year) ? " to rok przestępny" :" nie jest rokiem przestępnym"));
+        System.out.println(year + (Year.isLeap(year) ? " to rok przestępny" : " nie jest rokiem przestępnym"));
         askRepeat(Main::checkLeapYear);
+    }
+
+    private static void validateDate() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Wpisz datę w formacie dd/mm/rrrr: ");
+        String[] date = scanner.nextLine().split("/");
+        int day = Integer.parseInt(date[0]);
+        int month = Integer.parseInt(date[1]);
+        Year year = Year.of(Integer.parseInt(date[2]));
+        boolean dateIsValidate = false;
+        try {
+            dateIsValidate = year.isValidMonthDay(MonthDay.of(month, day));
+            System.out.println(dateIsValidate ? "Data poprawna" : "Data niepoprawna");
+        } catch (Exception e) {
+            System.out.println("Błędnie wprowadzona data");
+        }
+        askRepeat(Main::validateDate);
     }
 
 }
