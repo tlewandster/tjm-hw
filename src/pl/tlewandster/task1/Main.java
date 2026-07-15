@@ -23,6 +23,8 @@ public class Main {
         verifyAgeWithTernaryOperator();
         System.out.println(SET_GREEN_FONT + "8. Stawka VAT" + RESET_FONT_COLOR);
         getVatRate();
+        System.out.println(SET_GREEN_FONT + "9. Mini kalkulator" + RESET_FONT_COLOR);
+        miniCalc();
 
     }
 
@@ -153,7 +155,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Podaj kategorię produktu [żywność, książki, usługi, ubrania, elektronika, inne]: ");
         String category = scanner.nextLine();
-        switch (category){
+        switch (category) {
             case "żywność":
             case "książki":
                 System.out.println("VAT 5%");
@@ -170,5 +172,34 @@ public class Main {
                 System.out.println("Poczekaj, pójdę po szklaną kulę...");
         }
         askRepeat(Main::getVatRate);
+    }
+
+    private static void miniCalc() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Wpisz pierwszą liczbę: ");
+        int firstNum = scanner.nextInt();
+        scanner.nextLine();
+        System.out.println("Wpisz operator [+, -, *, /, %]: ");
+        String operator = scanner.nextLine();
+        while (!String.valueOf(operator).matches("[-+*/%]")) {
+            System.out.println("Niewłaściwy operator, spróbuj ponownie: ");
+            operator = scanner.nextLine();
+        }
+        System.out.println("Wpisz drugą liczbę: ");
+        int secondNum = scanner.nextInt();
+        if (operator.equals("/") && secondNum == 0) {
+            System.out.println("Nie dziel przez zero!");
+        } else {
+            double result = switch (operator) {
+                case "+" -> firstNum + secondNum;
+                case "-" -> firstNum - secondNum;
+                case "*" -> firstNum * secondNum;
+                case "/" -> (double) firstNum / secondNum;
+                case "%" -> firstNum % secondNum;
+                default -> 0;
+            };
+            System.out.println("Wynik to " + result);
+        }
+        askRepeat(Main::miniCalc);
     }
 }
