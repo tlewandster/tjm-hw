@@ -240,7 +240,7 @@ public class Main {
         int day = Integer.parseInt(date[0]);
         int month = Integer.parseInt(date[1]);
         Year year = Year.of(Integer.parseInt(date[2]));
-        boolean dateIsValidate = false;
+        boolean dateIsValidate;
         try {
             dateIsValidate = year.isValidMonthDay(MonthDay.of(month, day));
             System.out.println(dateIsValidate ? "Data poprawna" : "Data niepoprawna");
