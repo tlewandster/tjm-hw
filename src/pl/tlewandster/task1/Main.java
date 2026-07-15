@@ -1,7 +1,6 @@
 package pl.tlewandster.task1;
 
 import java.util.Scanner;
-import java.util.function.Consumer;
 
 public class Main {
     static void main() {
