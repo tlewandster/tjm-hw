@@ -21,6 +21,9 @@ public class Main {
         getNameOfDayNewWay();
         System.out.println(SET_GREEN_FONT + "7. Wiek i pełnoletność - operator trójargumentowy" + RESET_FONT_COLOR);
         verifyAgeWithTernaryOperator();
+        System.out.println(SET_GREEN_FONT + "8. Stawka VAT" + RESET_FONT_COLOR);
+        getVatRate();
+
     }
 
     private static void verifyAge() {
@@ -146,4 +149,26 @@ public class Main {
         askRepeat(Main::verifyAgeWithTernaryOperator);
     }
 
+    private static void getVatRate() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Podaj kategorię produktu [żywność, książki, usługi, ubrania, elektronika, inne]: ");
+        String category = scanner.nextLine();
+        switch (category){
+            case "żywność":
+            case "książki":
+                System.out.println("VAT 5%");
+                break;
+            case "usługi":
+                System.out.println("VAT 8%");
+                break;
+            case "ubrania":
+            case "elektronika":
+                System.out.println("VAT 23%");
+                break;
+            case "inne":
+            default:
+                System.out.println("Poczekaj, pójdę po szklaną kulę...");
+        }
+        askRepeat(Main::getVatRate);
+    }
 }
