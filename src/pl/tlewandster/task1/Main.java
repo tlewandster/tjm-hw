@@ -2,6 +2,8 @@ package pl.tlewandster.task1;
 
 import java.time.MonthDay;
 import java.time.Year;
+import java.util.List;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
@@ -33,7 +35,8 @@ public class Main {
         checkLeapYear();
         System.out.println(SET_GREEN_FONT + "12. Data - poprawność" + RESET_FONT_COLOR);
         validateDate();
-
+        System.out.println(SET_GREEN_FONT + "13. Gra: Kamień–Papier–Nożyce" + RESET_FONT_COLOR);
+        game();
     }
 
     private static void verifyAge() {
@@ -250,4 +253,21 @@ public class Main {
         askRepeat(Main::validateDate);
     }
 
+    private static void game() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Wybierz papier, nożyce czy kamień? [p, n, k]: ");
+        String playerChoice = scanner.nextLine();
+        String aiChoice = List.of("p", "n", "k").get(new Random().nextInt(3));
+        System.out.println("Komputer wyciągnął " + aiChoice);
+        if (playerChoice.equals(aiChoice)) {
+            System.out.println("Remis");
+        } else if ((playerChoice.equals("p") && aiChoice.equals("k")) ||
+                (playerChoice.equals("n") && aiChoice.equals("p")) ||
+                (playerChoice.equals("k") && aiChoice.equals("n"))) {
+            System.out.println("Wygrałeś !");
+        } else {
+            System.out.println("Przegrałeś !");
+        }
+        askRepeat(Main::game);
+    }
 }
