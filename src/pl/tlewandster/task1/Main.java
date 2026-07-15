@@ -13,6 +13,8 @@ public class Main {
         checkNumberEvenness();
         System.out.println(SET_GREEN_FONT + "3. Kategoryzacja wieku" + RESET_FONT_COLOR);
         categorizeByAge();
+        System.out.println(SET_GREEN_FONT + "4. Ocena temperatury" + RESET_FONT_COLOR);
+        rateTemperature();
     }
 
     private static void verifyAge() {
@@ -53,14 +55,30 @@ public class Main {
         int age = scanner.nextInt();
         if (age < 12) {
             System.out.println("Dziecko");
-        } else if (age <= 17){
+        } else if (age <= 17) {
             System.out.println("Nastolatek");
-        } else if (age <=64){
+        } else if (age <= 64) {
             System.out.println("Dorosły");
-        } else{
+        } else {
             System.out.println("Senior");
         }
         askRepeat(Main::categorizeByAge);
+    }
+
+    private static void rateTemperature() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Podaj temperaturę w st. Celsiusza: ");
+        int temperature = scanner.nextInt();
+        if (temperature < 0) {
+            System.out.println("Mróz");
+        } else if (temperature <= 15) {
+            System.out.println("Chłodno");
+        } else if (temperature <= 25) {
+            System.out.println("Ciepło");
+        } else {
+            System.out.println("Gorąco");
+        }
+        askRepeat(Main::rateTemperature);
     }
 
 }
