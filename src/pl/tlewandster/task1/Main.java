@@ -1,6 +1,7 @@
 package pl.tlewandster.task1;
 
 import java.util.Scanner;
+import java.util.function.Consumer;
 
 public class Main {
     static void main() {
@@ -15,6 +16,10 @@ public class Main {
         categorizeByAge();
         System.out.println(SET_GREEN_FONT + "4. Ocena temperatury" + RESET_FONT_COLOR);
         rateTemperature();
+        System.out.println(SET_GREEN_FONT + "5. Dzień tygodnia – klasyczny" + RESET_FONT_COLOR);
+        getNameOfDayClassicWay();
+        System.out.println(SET_GREEN_FONT + "6. Dzień tygodnia – nowy" + RESET_FONT_COLOR);
+        getNameOfDayNewWay();
     }
 
     private static void verifyAge() {
@@ -79,6 +84,58 @@ public class Main {
             System.out.println("Gorąco");
         }
         askRepeat(Main::rateTemperature);
+    }
+
+    private static void getNameOfDayClassicWay() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Podaj dzień tygodnia [1-7]: ");
+        int day = scanner.nextInt();
+        String nameOfDay;
+        switch (day) {
+            case 1:
+                nameOfDay = "Poniedziałek";
+                break;
+            case 2:
+                nameOfDay = "Wtorek";
+                break;
+            case 3:
+                nameOfDay = "Środa";
+                break;
+            case 4:
+                nameOfDay = "Czwartek";
+                break;
+            case 5:
+                nameOfDay = "Piątek";
+                break;
+            case 6:
+                nameOfDay = "Sobota";
+                break;
+            case 7:
+                nameOfDay = "Niedziela";
+                break;
+            default:
+                nameOfDay = "Nieznany dzień";
+        }
+        System.out.println(nameOfDay);
+        askRepeat(Main::getNameOfDayClassicWay);
+    }
+
+    private static void getNameOfDayNewWay() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Podaj dzień tygodnia [1-7]: ");
+        int day = scanner.nextInt();
+        String nameOfDay = switch (day) {
+            case 1 -> "Poniedziałek";
+            case 2 -> "Wtorek";
+            case 3 -> "Środa";
+            case 4 -> "Czwartek";
+            case 5 -> "Piątek";
+            case 6 -> "Sobota";
+            case 7 -> "Niedziela";
+            default -> "Nieznany dzień";
+        };
+        System.out.println(nameOfDay);
+        askRepeat(Main::getNameOfDayNewWay);
     }
 
 }
