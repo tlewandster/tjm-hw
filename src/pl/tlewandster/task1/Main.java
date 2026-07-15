@@ -20,8 +20,15 @@ public class Main {
         } else {
             System.out.println("Nie jesteś pełnoletni");
         }
+        askRepeat(Main::verifyAge);
     }
 
+    private static void askRepeat(Runnable action) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Powtórzyć [t/n] ?");
+        if (scanner.nextLine().equals("t")){
+            action.run();
+        }
     }
 
 
