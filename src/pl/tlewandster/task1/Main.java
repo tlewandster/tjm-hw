@@ -53,9 +53,9 @@ public class Main {
         int age = scanner.nextInt();
         if (age < 12) {
             System.out.println("Dziecko");
-        } else if (age >= 12 && age <= 17){
+        } else if (age <= 17){
             System.out.println("Nastolatek");
-        } else if (age>=18 && age <=64){
+        } else if (age <=64){
             System.out.println("Dorosły");
         } else{
             System.out.println("Senior");
