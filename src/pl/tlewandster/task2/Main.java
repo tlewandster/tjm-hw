@@ -11,6 +11,8 @@ public class Main {
         printNums1To10();
         System.out.println(SET_GREEN_FONT + "2. Liczby parzyste w zakresie" + RESET_FONT_COLOR);
         printRangeOfEven();
+        System.out.println(SET_GREEN_FONT + "3. Suma liczb od 1 do n" + RESET_FONT_COLOR);
+        sumRange();
 
     }
 
@@ -39,5 +41,14 @@ public class Main {
         askRepeat(Main::printRangeOfEven);
     }
 
-
+    private static void  sumRange(){
+        Scanner scanner = new Scanner(System.in);
+        int to = scanner.nextInt();
+        int result = 0;
+        for (int i = 1; i <= to; i++) {
+            result += i;
+        }
+        System.out.printf("Suma cyfr od 1 do %d to %d",to, result);
+        askRepeat(Main::sumRange);
+    }
 }
