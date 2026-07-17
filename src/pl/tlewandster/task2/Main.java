@@ -15,6 +15,9 @@ public class Main {
         sumRange();
         System.out.println(SET_GREEN_FONT + "4. Odwrotne liczenie" + RESET_FONT_COLOR);
         printReverse();
+        System.out.println(SET_GREEN_FONT + "5. Pierwsze wystąpienie litery" + RESET_FONT_COLOR);
+        findFirstLetter();
+
     }
 
 
@@ -42,21 +45,35 @@ public class Main {
         askRepeat(Main::printRangeOfEven);
     }
 
-    private static void  sumRange(){
+    private static void sumRange() {
         Scanner scanner = new Scanner(System.in);
         int to = scanner.nextInt();
         int result = 0;
         for (int i = 1; i <= to; i++) {
             result += i;
         }
-        System.out.printf("Suma cyfr od 1 do %d to %d",to, result);
+        System.out.printf("Suma cyfr od 1 do %d to %d", to, result);
         askRepeat(Main::sumRange);
     }
 
-    private static void  printReverse(){
-        for (int i = 10; i >0 ; i--) {
+    private static void printReverse() {
+        for (int i = 10; i > 0; i--) {
             System.out.print(i + " ");
         }
         askRepeat(Main::printReverse);
+    }
+
+    private static void findFirstLetter() {
+        Scanner scanner = new Scanner(System.in);
+        String word = scanner.nextLine();
+        int position = -1;
+        for (int i = 0; i < word.length(); i++) {
+            if (word.charAt(i) == 'a') {
+                position = i + 1;
+                break;
+            }
+        }
+        System.out.println(position > 0 ? "Pierwsza litera 'a' na pozycji " + position : "W Wyrazie nie ma litery 'a'.");
+        askRepeat(Main::findFirstLetter);
     }
 }
