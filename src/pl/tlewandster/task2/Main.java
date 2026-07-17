@@ -13,7 +13,8 @@ public class Main {
         printRangeOfEven();
         System.out.println(SET_GREEN_FONT + "3. Suma liczb od 1 do n" + RESET_FONT_COLOR);
         sumRange();
-
+        System.out.println(SET_GREEN_FONT + "4. Odwrotne liczenie" + RESET_FONT_COLOR);
+        printReverse();
     }
 
 
@@ -50,5 +51,12 @@ public class Main {
         }
         System.out.printf("Suma cyfr od 1 do %d to %d",to, result);
         askRepeat(Main::sumRange);
+    }
+
+    private static void  printReverse(){
+        for (int i = 10; i >0 ; i--) {
+            System.out.print(i + " ");
+        }
+        askRepeat(Main::printReverse);
     }
 }
