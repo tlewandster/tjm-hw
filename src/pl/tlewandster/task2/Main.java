@@ -9,6 +9,9 @@ public class Main {
 
         System.out.println(SET_GREEN_FONT + "1. Liczby od 1 do 10" + RESET_FONT_COLOR);
         printNums1To10();
+        System.out.println(SET_GREEN_FONT + "2. Liczby parzyste w zakresie" + RESET_FONT_COLOR);
+        printRangeOfEven();
+
     }
 
 
@@ -25,6 +28,15 @@ public class Main {
             System.out.print(i + " ");
         }
         askRepeat(Main::printNums1To10);
+    }
+
+    private static void printRangeOfEven() {
+        Scanner scanner = new Scanner(System.in);
+        int to = scanner.nextInt();
+        for (int i = 0; i <= to; i++) {
+            System.out.print(i % 2 == 0 ? i : " ");
+        }
+        askRepeat(Main::printRangeOfEven);
     }
 
 
