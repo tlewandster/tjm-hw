@@ -17,7 +17,8 @@ public class Main {
         printReverse();
         System.out.println(SET_GREEN_FONT + "5. Pierwsze wystąpienie litery" + RESET_FONT_COLOR);
         findFirstLetter();
-
+        System.out.println(SET_GREEN_FONT + "6. While – odliczanie" + RESET_FONT_COLOR);
+        countdown();
     }
 
 
@@ -75,5 +76,14 @@ public class Main {
         }
         System.out.println(position > 0 ? "Pierwsza litera 'a' na pozycji " + position : "W Wyrazie nie ma litery 'a'.");
         askRepeat(Main::findFirstLetter);
+    }
+
+    private static void countdown() {
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+        while (n >= 0) {
+            System.out.print(n-- + " ");
+        }
+        askRepeat(Main::countdown);
     }
 }
