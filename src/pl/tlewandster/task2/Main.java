@@ -95,7 +95,7 @@ public class Main {
         boolean isRightPass = false;
         while (!isRightPass){
             if (scanner.nextLine().equals(pass)){
-                System.out.println("Hasło prawidłowe");
+                System.out.println("Zalogowano");
                 isRightPass = true;
             } else {
                 System.out.println("Hasło nieprawidłowe");
@@ -103,4 +103,6 @@ public class Main {
         }
         askRepeat(Main::checkPass);
     }
+
+
 }
