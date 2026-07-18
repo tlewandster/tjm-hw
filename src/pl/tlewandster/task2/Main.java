@@ -23,6 +23,8 @@ public class Main {
         checkPass();
         System.out.println(SET_GREEN_FONT + "8. Do-while – min. jedna próba" + RESET_FONT_COLOR);
         getPositiveNum();
+        System.out.println(SET_GREEN_FONT + "9. Tabela mnożenia dla liczby" + RESET_FONT_COLOR);
+        createMultiplicationTable();
     }
 
 
@@ -114,5 +116,14 @@ public class Main {
             num = scanner.nextInt();
         } while (num <= 0);
         askRepeat(Main::getPositiveNum);
+    }
+
+    private static void createMultiplicationTable() {
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+        for (int i = 1; i <= 10; i++) {
+            System.out.printf("%d x %d = %d%n", n, i, n * i);
+        }
+        askRepeat(Main::createMultiplicationTable);
     }
 }
