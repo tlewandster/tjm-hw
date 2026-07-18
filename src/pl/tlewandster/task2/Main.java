@@ -19,6 +19,8 @@ public class Main {
         findFirstLetter();
         System.out.println(SET_GREEN_FONT + "6. While – odliczanie" + RESET_FONT_COLOR);
         countdown();
+        System.out.println(SET_GREEN_FONT + "7. While – zgadywanie hasła" + RESET_FONT_COLOR);
+        checkPass();
     }
 
 
@@ -85,5 +87,20 @@ public class Main {
             System.out.print(n-- + " ");
         }
         askRepeat(Main::countdown);
+    }
+
+    private static void checkPass() {
+        Scanner scanner = new Scanner(System.in);
+        String pass = "java123";
+        boolean isRightPass = false;
+        while (!isRightPass){
+            if (scanner.nextLine().equals(pass)){
+                System.out.println("Hasło prawidłowe");
+                isRightPass = true;
+            } else {
+                System.out.println("Hasło nieprawidłowe");
+            }
+        }
+        askRepeat(Main::checkPass);
     }
 }
