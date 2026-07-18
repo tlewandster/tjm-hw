@@ -21,6 +21,8 @@ public class Main {
         countdown();
         System.out.println(SET_GREEN_FONT + "7. While – zgadywanie hasła" + RESET_FONT_COLOR);
         checkPass();
+        System.out.println(SET_GREEN_FONT + "8. Do-while – min. jedna próba" + RESET_FONT_COLOR);
+        getPositiveNum();
     }
 
 
@@ -93,8 +95,8 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         String pass = "java123";
         boolean isRightPass = false;
-        while (!isRightPass){
-            if (scanner.nextLine().equals(pass)){
+        while (!isRightPass) {
+            if (scanner.nextLine().equals(pass)) {
                 System.out.println("Zalogowano");
                 isRightPass = true;
             } else {
@@ -104,5 +106,13 @@ public class Main {
         askRepeat(Main::checkPass);
     }
 
-
+    private static void getPositiveNum() {
+        Scanner scanner = new Scanner(System.in);
+        int num;
+        do {
+            System.out.println("Podaj liczbę dodatnią:");
+            num = scanner.nextInt();
+        } while (num <= 0);
+        askRepeat(Main::getPositiveNum);
+    }
 }
