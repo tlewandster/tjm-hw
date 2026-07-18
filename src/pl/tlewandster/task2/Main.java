@@ -25,6 +25,8 @@ public class Main {
         getPositiveNum();
         System.out.println(SET_GREEN_FONT + "9. Tabela mnożenia dla liczby" + RESET_FONT_COLOR);
         createMultiplicationTable();
+        System.out.println(SET_GREEN_FONT + "10. Break – pierwsza liczba podzielna przez 7" + RESET_FONT_COLOR);
+        findFirstNumDivisibleBy7();
     }
 
 
@@ -125,5 +127,17 @@ public class Main {
             System.out.printf("%d x %d = %d%n", n, i, n * i);
         }
         askRepeat(Main::createMultiplicationTable);
+    }
+
+    private static void findFirstNumDivisibleBy7() {
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+        for (int i = n + 1; ; i++) {
+            if (i % 7 == 0) {
+                System.out.printf("Pierwsza liczba większa od %d podzielna przez 7 to %d", n, i);
+                break;
+            }
+        }
+        askRepeat(Main::findFirstNumDivisibleBy7);
     }
 }
