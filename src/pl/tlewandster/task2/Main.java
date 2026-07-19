@@ -35,6 +35,8 @@ public class Main {
         countLoginAttempt();
         System.out.println(SET_GREEN_FONT + "14. Liczby podzielne przez 3 lub 5 w przedziale" + RESET_FONT_COLOR);
         findNumbersDivisibleBy3Or5();
+        System.out.println(SET_GREEN_FONT + "15. Obliczanie silni" + RESET_FONT_COLOR);
+        calcFactorial();
     }
 
 
@@ -197,8 +199,20 @@ public class Main {
         int start = scanner.nextInt();
         int end = scanner.nextInt();
         for (int i = start; i <= end; i++) {
-            System.out.print(i % 3 == 0 || i % 5 == 0 ? i +" ": "");
+            System.out.print(i % 3 == 0 || i % 5 == 0 ? i + " " : "");
         }
         askRepeat(Main::findNumbersDivisibleBy3Or5);
     }
+
+    private static void calcFactorial() {
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+        long result = 1;
+        for (int i = 1; i <= n; i++) {
+            result *= i;
+        }
+        System.out.println(result);
+        askRepeat(Main::calcFactorial);
+    }
+
 }
