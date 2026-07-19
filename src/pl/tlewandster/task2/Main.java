@@ -192,9 +192,7 @@ public class Main {
                 isAllowed = true;
                 break;
             }
-            if (loginAttempt < 3) {
-                System.out.println("Nieprawidłowe dane.");
-            }
+            System.out.println("Nieprawidłowe dane.");
         } while (++loginAttempt < 3);
         System.out.println(isAllowed ? "Zalogowano" : "Dostęp zablokowany!");
         askRepeat(Main::countLoginAttempt);
