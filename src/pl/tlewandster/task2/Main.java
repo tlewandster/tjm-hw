@@ -7,6 +7,7 @@ public class Main {
         final String SET_GREEN_FONT = "\u001B[32m";
         final String RESET_FONT_COLOR = "\u001B[0m";
 
+        calcPower();
         System.out.println(SET_GREEN_FONT + "1. Liczby od 1 do 10" + RESET_FONT_COLOR);
         printNums1To10();
         System.out.println(SET_GREEN_FONT + "2. Liczby parzyste w zakresie" + RESET_FONT_COLOR);
@@ -39,6 +40,8 @@ public class Main {
         calcFactorial();
         System.out.println(SET_GREEN_FONT + "16. Liczba cyfr w liczbie" + RESET_FONT_COLOR);
         calcNums();
+        System.out.println(SET_GREEN_FONT + "17. Podnoszenie do potęgi" + RESET_FONT_COLOR);
+        calcPower();
     }
 
 
@@ -231,4 +234,20 @@ public class Main {
         System.out.println(i);
         askRepeat(Main::calcNums);
     }
+
+    private static void calcPower() {
+        Scanner scanner = new Scanner(System.in);
+        int n, m;
+        n = scanner.nextInt();
+        do {
+            m = scanner.nextInt();
+        } while (m < 0);
+        int result = n;
+        for (int i = 1; i < m; i++) {
+            result *= n;
+        }
+        System.out.println(result);
+        askRepeat(Main::calcPower);
+    }
+
 }
