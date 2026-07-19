@@ -33,6 +33,8 @@ public class Main {
         sumPositive();
         System.out.println(SET_GREEN_FONT + "13. Licznik prób logowania" + RESET_FONT_COLOR);
         countLoginAttempt();
+        System.out.println(SET_GREEN_FONT + "14. Liczby podzielne przez 3 lub 5 w przedziale" + RESET_FONT_COLOR);
+        findNumbersDivisibleBy3Or5();
     }
 
 
@@ -188,5 +190,15 @@ public class Main {
         } while (++loginAttempt < 3);
         System.out.println(isAllowed ? "Zalogowano" : "Dostęp zablokowany!");
         askRepeat(Main::countLoginAttempt);
+    }
+
+    private static void findNumbersDivisibleBy3Or5() {
+        Scanner scanner = new Scanner(System.in);
+        int start = scanner.nextInt();
+        int end = scanner.nextInt();
+        for (int i = start; i <= end; i++) {
+            System.out.print(i % 3 == 0 || i % 5 == 0 ? i +" ": "");
+        }
+        askRepeat(Main::findNumbersDivisibleBy3Or5);
     }
 }
