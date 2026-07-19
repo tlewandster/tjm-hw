@@ -31,6 +31,8 @@ public class Main {
         skipEvenNumbers();
         System.out.println(SET_GREEN_FONT + "12. Suma liczb dodatnich" + RESET_FONT_COLOR);
         sumPositive();
+        System.out.println(SET_GREEN_FONT + "13. Licznik prób logowania" + RESET_FONT_COLOR);
+        countLoginAttempt();
     }
 
 
@@ -163,5 +165,28 @@ public class Main {
         } while (num != 0);
         System.out.println("suma wprowadzonych liczb dodatnich: " + result);
         askRepeat(Main::sumPositive);
+    }
+
+    private static void countLoginAttempt() {
+        final String login = "Jaś";
+        final String pass = "Kunefał";
+        int loginAttempt = 0;
+        boolean isAllowed = false;
+        Scanner scanner = new Scanner(System.in);
+        do {
+            System.out.print("Login: ");
+            String userLogin = scanner.nextLine();
+            System.out.print("Hasło: ");
+            String userPass = scanner.nextLine();
+            if (userLogin.equals(login) && userPass.equals(pass)) {
+                isAllowed = true;
+                break;
+            }
+            if (loginAttempt < 3) {
+                System.out.println("Nieprawidłowe dane.");
+            }
+        } while (++loginAttempt < 3);
+        System.out.println(isAllowed ? "Zalogowano" : "Dostęp zablokowany!");
+        askRepeat(Main::countLoginAttempt);
     }
 }
