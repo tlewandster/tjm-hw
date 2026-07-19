@@ -27,8 +27,10 @@ public class Main {
         createMultiplicationTable();
         System.out.println(SET_GREEN_FONT + "10. Break – pierwsza liczba podzielna przez 7" + RESET_FONT_COLOR);
         findFirstNumDivisibleBy7();
-        System.out.println(SET_GREEN_FONT + "10. Continue – pomijanie parzystych" + RESET_FONT_COLOR);
+        System.out.println(SET_GREEN_FONT + "11. Continue – pomijanie parzystych" + RESET_FONT_COLOR);
         skipEvenNumbers();
+        System.out.println(SET_GREEN_FONT + "12. Suma liczb dodatnich" + RESET_FONT_COLOR);
+        sumPositive();
     }
 
 
@@ -149,5 +151,17 @@ public class Main {
             System.out.print(num % 2 != 0 ? num : " ");
         }
         askRepeat(Main::skipEvenNumbers);
+    }
+
+    private static void sumPositive() {
+        Scanner scanner = new Scanner(System.in);
+        int result = 0;
+        int num;
+        do {
+            num = scanner.nextInt();
+            result += num > 0 ? num : 0;
+        } while (num != 0);
+        System.out.println("suma wprowadzonych liczb dodatnich: " + result);
+        askRepeat(Main::sumPositive);
     }
 }
