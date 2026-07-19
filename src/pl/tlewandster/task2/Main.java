@@ -7,7 +7,6 @@ public class Main {
         final String SET_GREEN_FONT = "\u001B[32m";
         final String RESET_FONT_COLOR = "\u001B[0m";
 
-        calcPower();
         System.out.println(SET_GREEN_FONT + "1. Liczby od 1 do 10" + RESET_FONT_COLOR);
         printNums1To10();
         System.out.println(SET_GREEN_FONT + "2. Liczby parzyste w zakresie" + RESET_FONT_COLOR);
@@ -42,6 +41,8 @@ public class Main {
         calcNums();
         System.out.println(SET_GREEN_FONT + "17. Podnoszenie do potęgi" + RESET_FONT_COLOR);
         calcPower();
+        System.out.println(SET_GREEN_FONT + "18. Znajdowanie największej liczby" + RESET_FONT_COLOR);
+        findGreatestNum();
     }
 
 
@@ -248,6 +249,18 @@ public class Main {
         }
         System.out.println(result);
         askRepeat(Main::calcPower);
+    }
+
+    private static void findGreatestNum() {
+        Scanner scanner = new Scanner(System.in);
+        int num;
+        int max = 0;
+        do {
+            num = scanner.nextInt();
+            max = num > max ? num : max;
+        } while (num != 0);
+        System.out.println(max);
+        askRepeat(Main::findGreatestNum);
     }
 
 }
