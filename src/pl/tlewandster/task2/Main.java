@@ -45,6 +45,8 @@ public class Main {
         calcPower();
         System.out.println(SET_GREEN_FONT + "18. Znajdowanie największej liczby" + RESET_FONT_COLOR);
         findGreatestNum();
+        System.out.println(SET_GREEN_FONT + "18. Średnia z ocen" + RESET_FONT_COLOR);
+        calcAverage();
     }
 
 
@@ -261,6 +263,18 @@ public class Main {
         } while (num != 0);
         System.out.println(max);
         askRepeat(Main::findGreatestNum);
+    }
+
+    private static void calcAverage() {
+        Scanner scanner = new Scanner(System.in);
+        int sum = 0;
+        int numGrades = scanner.nextInt();
+        for (int i = 0; i < numGrades; i++) {
+            sum += scanner.nextInt();
+        }
+        double avg = (double) sum / numGrades;
+        System.out.println(avg);
+        askRepeat(Main::calcAverage);
     }
 
 }
