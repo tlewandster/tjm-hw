@@ -37,6 +37,8 @@ public class Main {
         findNumbersDivisibleBy3Or5();
         System.out.println(SET_GREEN_FONT + "15. Obliczanie silni" + RESET_FONT_COLOR);
         calcFactorial();
+        System.out.println(SET_GREEN_FONT + "16. Liczba cyfr w liczbie" + RESET_FONT_COLOR);
+        calcNums();
     }
 
 
@@ -215,4 +217,18 @@ public class Main {
         askRepeat(Main::calcFactorial);
     }
 
+    private static void calcNums() {
+        Scanner scanner = new Scanner(System.in);
+        int n;
+        do {
+            n = scanner.nextInt();
+        } while (n < 0);
+        int i = 0;
+        while (n > 0) {
+            n /= 10;
+            i++;
+        }
+        System.out.println(i);
+        askRepeat(Main::calcNums);
+    }
 }
