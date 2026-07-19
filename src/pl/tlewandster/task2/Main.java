@@ -2,6 +2,8 @@ package pl.tlewandster.task2;
 
 import java.util.Scanner;
 
+@SuppressWarnings({"ManualMinMaxCalculation", "JavaPrintToLogpoint"})
+
 public class Main {
     static void main() {
         final String SET_GREEN_FONT = "\u001B[32m";
