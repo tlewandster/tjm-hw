@@ -27,6 +27,8 @@ public class Main {
         createMultiplicationTable();
         System.out.println(SET_GREEN_FONT + "10. Break – pierwsza liczba podzielna przez 7" + RESET_FONT_COLOR);
         findFirstNumDivisibleBy7();
+        System.out.println(SET_GREEN_FONT + "10. Continue – pomijanie parzystych" + RESET_FONT_COLOR);
+        skipEvenNumbers();
     }
 
 
@@ -139,5 +141,13 @@ public class Main {
             }
         }
         askRepeat(Main::findFirstNumDivisibleBy7);
+    }
+
+    private static void skipEvenNumbers() {
+        int num = 0;
+        while (++num <= 20) {
+            System.out.print(num % 2 != 0 ? num : " ");
+        }
+        askRepeat(Main::skipEvenNumbers);
     }
 }
