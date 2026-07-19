@@ -2,7 +2,7 @@ package pl.tlewandster.task2;
 
 import java.util.Scanner;
 
-@SuppressWarnings({"ManualMinMaxCalculation", "JavaPrintToLogpoint"})
+@SuppressWarnings({"ManualMinMaxCalculation", "JavaPrintToLogpoint", "StringConcatenationInLoop"})
 
 public class Main {
     static void main() {
@@ -45,8 +45,10 @@ public class Main {
         calcPower();
         System.out.println(SET_GREEN_FONT + "18. Znajdowanie największej liczby" + RESET_FONT_COLOR);
         findGreatestNum();
-        System.out.println(SET_GREEN_FONT + "18. Średnia z ocen" + RESET_FONT_COLOR);
+        System.out.println(SET_GREEN_FONT + "19. Średnia z ocen" + RESET_FONT_COLOR);
         calcAverage();
+        System.out.println(SET_GREEN_FONT + "20. Odwrócenie napisu" + RESET_FONT_COLOR);
+        reverseString();
     }
 
 
@@ -275,6 +277,17 @@ public class Main {
         double avg = (double) sum / numGrades;
         System.out.println(avg);
         askRepeat(Main::calcAverage);
+    }
+
+    private static void reverseString() {
+        Scanner scanner = new Scanner(System.in);
+        String word = scanner.nextLine();
+        String reversedWord = "";
+        for (int i = word.length() - 1; i >= 0; i--) {
+            reversedWord += word.charAt(i);
+        }
+        System.out.println(reversedWord);
+        askRepeat(Main::reverseString);
     }
 
 }
