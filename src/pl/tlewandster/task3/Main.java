@@ -12,12 +12,14 @@ public class Main {
 
         System.out.println(SET_GREEN_FONT + "1. The first array of numbers" + RESET_FONT_COLOR);
         createArray();
+        System.out.println(SET_GREEN_FONT + "2. Array of names" + RESET_FONT_COLOR);
+        printNames();
     }
 
     private static void askRepeat(Runnable action) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("\nPowtórzyć [t/n] ?");
-        if (scanner.nextLine().equals("t")) {
+        System.out.println("\nRepeat [y/n] ?");
+        if (scanner.nextLine().equals("y")) {
             action.run();
         }
     }
@@ -28,5 +30,12 @@ public class Main {
         askRepeat(Main::createArray);
     }
 
+    private static void printNames(){
+        String[] names = {"Arek", "Marek", "Czarek"};
+        for (String name : names) {
+            System.out.println("Hi, "+ name+ "!");
+        }
+        askRepeat(Main::printNames);
+    }
 
 }
