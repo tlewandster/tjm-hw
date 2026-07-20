@@ -24,6 +24,8 @@ public class Main {
         findMaxValue();
         System.out.println(SET_GREEN_FONT + "7. Smallest element of array" + RESET_FONT_COLOR);
         findMinValue();
+        System.out.println(SET_GREEN_FONT + "8. Number of occurrences of a given value" + RESET_FONT_COLOR);
+        countValue();
     }
 
     private static void askRepeat(Runnable action) {
@@ -117,5 +119,20 @@ public class Main {
         Arrays.sort(nums);
         System.out.println("Smallest number of array: " + nums[0]);
         askRepeat(Main::findMinValue);
+    }
+
+    private static void countValue() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Value to count: ");
+        int valueToCount = scanner.nextInt();
+        int[] nums = getRandomIntArray(50);
+        System.out.print("Array: ");
+        printArray(nums);
+        int count = 0;
+        for (int num : nums) {
+            if (num == valueToCount) count++;
+        }
+        System.out.println("Number of occurrences: " + count);
+        askRepeat(Main::countValue);
     }
 }
