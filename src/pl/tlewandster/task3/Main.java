@@ -24,16 +24,20 @@ public class Main {
         }
     }
 
-    private static void createArray(){
-        int[] nums = {1,2,3,4,5};
-        System.out.println(Arrays.toString(nums));
+    private static void printArray(int[] array){
+        System.out.println(Arrays.toString(array));
+    }
+
+    private static void createArray() {
+        int[] nums = {1, 2, 3, 4, 5};
+        printArray(nums);
         askRepeat(Main::createArray);
     }
 
-    private static void printNames(){
+    private static void printNames() {
         String[] names = {"Arek", "Marek", "Czarek"};
         for (String name : names) {
-            System.out.println("Hi, "+ name+ "!");
+            System.out.println("Hi, " + name + "!");
         }
         askRepeat(Main::printNames);
     }
