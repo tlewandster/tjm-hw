@@ -21,7 +21,9 @@ public class Main {
         System.out.println(SET_GREEN_FONT + "5. Average of elements in array" + RESET_FONT_COLOR);
         avgElements();
         System.out.println(SET_GREEN_FONT + "6. Largest element of array" + RESET_FONT_COLOR);
-        maxValue();
+        findMaxValue();
+        System.out.println(SET_GREEN_FONT + "7. Smallest element of array" + RESET_FONT_COLOR);
+        findMinValue();
     }
 
     private static void askRepeat(Runnable action) {
@@ -76,7 +78,7 @@ public class Main {
         for (int num : nums) {
             sum += num;
         }
-        System.out.println("Array:");
+        System.out.print("Array: ");
         printArray(nums);
         System.out.println("Sum:\n" + sum);
         askRepeat(Main::sumElements);
@@ -89,20 +91,31 @@ public class Main {
             sum += num;
         }
         double avg = (double) sum / nums.length;
-        System.out.println("Array:");
+        System.out.print("Array: ");
         printArray(nums);
         System.out.println("Average:\n" + avg);
         askRepeat(Main::avgElements);
     }
 
-    private static void maxValue() {
+    private static void findMaxValue() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Array length:");
         int[] nums = getRandomIntArray(scanner.nextInt());
-        System.out.println("Array:");
+        System.out.print("Array: ");
         printArray(nums);
         Arrays.sort(nums);
         System.out.println("Largest number of array: " + nums[nums.length - 1]);
-        askRepeat(Main::maxValue);
+        askRepeat(Main::findMaxValue);
+    }
+
+    private static void findMinValue() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Array length:");
+        int[] nums = getRandomIntArray(scanner.nextInt());
+        System.out.print("Array: ");
+        printArray(nums);
+        Arrays.sort(nums);
+        System.out.println("Smallest number of array: " + nums[0]);
+        askRepeat(Main::findMinValue);
     }
 }
