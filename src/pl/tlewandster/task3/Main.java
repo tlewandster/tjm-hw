@@ -14,6 +14,8 @@ public class Main {
         createArray();
         System.out.println(SET_GREEN_FONT + "2. Array of names" + RESET_FONT_COLOR);
         printNames();
+        System.out.println(SET_GREEN_FONT + "3. Array of values from 1 to n" + RESET_FONT_COLOR);
+        createArray1ToN();
     }
 
     private static void askRepeat(Runnable action) {
@@ -42,4 +44,15 @@ public class Main {
         askRepeat(Main::printNames);
     }
 
+    private static void createArray1ToN() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Array length: ");
+        int length = scanner.nextInt();
+        int[] nums = new int[length];
+        for (int i = 0; i < nums.length; i++) {
+            nums[i] = i + 1;
+        }
+        printArray(nums);
+        askRepeat(Main::createArray1ToN);
+    }
 }
