@@ -18,8 +18,10 @@ public class Main {
         createArray1ToN();
         System.out.println(SET_GREEN_FONT + "4. Sum of elements in array" + RESET_FONT_COLOR);
         sumElements();
-        System.out.println(SET_GREEN_FONT + "4. Average of elements in array" + RESET_FONT_COLOR);
+        System.out.println(SET_GREEN_FONT + "5. Average of elements in array" + RESET_FONT_COLOR);
         avgElements();
+        System.out.println(SET_GREEN_FONT + "6. Largest element of array" + RESET_FONT_COLOR);
+        maxValue();
     }
 
     private static void askRepeat(Runnable action) {
@@ -91,5 +93,16 @@ public class Main {
         printArray(nums);
         System.out.println("Average:\n" + avg);
         askRepeat(Main::avgElements);
+    }
+
+    private static void maxValue() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Array length:");
+        int[] nums = getRandomIntArray(scanner.nextInt());
+        System.out.println("Array:");
+        printArray(nums);
+        Arrays.sort(nums);
+        System.out.println("Largest number of array: " + nums[nums.length - 1]);
+        askRepeat(Main::maxValue);
     }
 }
