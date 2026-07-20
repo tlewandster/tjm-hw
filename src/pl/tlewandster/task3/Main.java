@@ -16,6 +16,8 @@ public class Main {
         printNames();
         System.out.println(SET_GREEN_FONT + "3. Array of values from 1 to n" + RESET_FONT_COLOR);
         createArray1ToN();
+        System.out.println(SET_GREEN_FONT + "4. Sum of elements in array" + RESET_FONT_COLOR);
+        sumElements();
     }
 
     private static void askRepeat(Runnable action) {
@@ -26,14 +28,14 @@ public class Main {
         }
     }
 
-    private static void printArray(int[] array){
+    private static void printArray(int[] array) {
         System.out.println(Arrays.toString(array));
     }
 
-    private static int[] getRandomIntArray(int length){
+    private static int[] getRandomIntArray(int length) {
         int[] nums = new int[length];
         for (int i = 0; i < length; i++) {
-            nums[i] = (int) (Math.random()*100);
+            nums[i] = (int) (Math.random() * 100);
         }
         return nums;
     }
@@ -62,5 +64,17 @@ public class Main {
         }
         printArray(nums);
         askRepeat(Main::createArray1ToN);
+    }
+
+    private static void sumElements() {
+        int[] nums = getRandomIntArray(3);
+        int sum = 0;
+        for (int num : nums) {
+            sum += num;
+        }
+        System.out.println("Array:");
+        printArray(nums);
+        System.out.println("Sum:\n" + sum);
+        askRepeat(Main::sumElements);
     }
 }
