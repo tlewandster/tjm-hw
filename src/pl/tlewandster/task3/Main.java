@@ -30,8 +30,16 @@ public class Main {
         System.out.println(Arrays.toString(array));
     }
 
+    private static int[] getRandomIntArray(int length){
+        int[] nums = new int[length];
+        for (int i = 0; i < length; i++) {
+            nums[i] = (int) (Math.random()*100);
+        }
+        return nums;
+    }
+
     private static void createArray() {
-        int[] nums = {1, 2, 3, 4, 5};
+        int[] nums = getRandomIntArray(5);
         printArray(nums);
         askRepeat(Main::createArray);
     }
