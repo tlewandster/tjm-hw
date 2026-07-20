@@ -26,6 +26,8 @@ public class Main {
         findMinValue();
         System.out.println(SET_GREEN_FONT + "8. Number of occurrences of a given value" + RESET_FONT_COLOR);
         countValue();
+        System.out.println(SET_GREEN_FONT + "9. Search for an item" + RESET_FONT_COLOR);
+        searchItem();
     }
 
     private static void askRepeat(Runnable action) {
@@ -134,5 +136,18 @@ public class Main {
         }
         System.out.println("Number of occurrences: " + count);
         askRepeat(Main::countValue);
+    }
+
+    private static void searchItem() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Value to search: ");
+        int valueToSearch = scanner.nextInt();
+        int[] nums = getRandomIntArray(50);
+        System.out.print("Array: ");
+        printArray(nums);
+        Arrays.sort(nums);
+        boolean isFounded = Arrays.binarySearch(nums, valueToSearch) >= 0;
+        System.out.println(isFounded ? "Founded" : "Not founded");
+        askRepeat(Main::searchItem);
     }
 }
