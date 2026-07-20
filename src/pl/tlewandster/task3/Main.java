@@ -28,6 +28,8 @@ public class Main {
         countValue();
         System.out.println(SET_GREEN_FONT + "9. Search for an item" + RESET_FONT_COLOR);
         searchItem();
+        System.out.println(SET_GREEN_FONT + "10. Reverse array" + RESET_FONT_COLOR);
+        reverseArray();
     }
 
     private static void askRepeat(Runnable action) {
@@ -149,5 +151,18 @@ public class Main {
         boolean isFounded = Arrays.binarySearch(nums, valueToSearch) >= 0;
         System.out.println(isFounded ? "Founded" : "Not founded");
         askRepeat(Main::searchItem);
+    }
+
+    private static void reverseArray(){
+        int[] nums = getRandomIntArray(10);
+        int[] reversedNums = new int[nums.length];
+        System.out.print("Array: ");
+        printArray(nums);
+        for (int i = 0; i < nums.length; i++) {
+            reversedNums[reversedNums.length-1-i] = nums[i];
+        }
+        System.out.print("Reversed array: ");
+        printArray(reversedNums);
+        askRepeat(Main::reverseArray);
     }
 }
