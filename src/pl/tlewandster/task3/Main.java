@@ -18,6 +18,8 @@ public class Main {
         createArray1ToN();
         System.out.println(SET_GREEN_FONT + "4. Sum of elements in array" + RESET_FONT_COLOR);
         sumElements();
+        System.out.println(SET_GREEN_FONT + "4. Average of elements in array" + RESET_FONT_COLOR);
+        avgElements();
     }
 
     private static void askRepeat(Runnable action) {
@@ -76,5 +78,18 @@ public class Main {
         printArray(nums);
         System.out.println("Sum:\n" + sum);
         askRepeat(Main::sumElements);
+    }
+
+    private static void avgElements() {
+        int[] nums = getRandomIntArray(3);
+        int sum = 0;
+        for (int num : nums) {
+            sum += num;
+        }
+        double avg = (double) sum / nums.length;
+        System.out.println("Array:");
+        printArray(nums);
+        System.out.println("Average:\n" + avg);
+        askRepeat(Main::avgElements);
     }
 }
