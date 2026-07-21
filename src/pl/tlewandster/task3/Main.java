@@ -53,8 +53,8 @@ public class Main {
     private static void printArray(int[] array) {
         System.out.println(Arrays.toString(array));
     }
-    
-    private static void printMatrix(int[][] matrix){
+
+    private static void printMatrix(int[][] matrix) {
         for (int[] row : matrix) {
             System.out.println(Arrays.toString(row));
         }
@@ -68,10 +68,10 @@ public class Main {
         return nums;
     }
 
-    private static int[][] getRandomIntMatrix(int columns, int rows) {
-        int[][] matrix = new int[columns][rows];
-        for (int i = 0; i < columns; i++) {
-            for (int j = 0; j < rows; j++) {
+    private static int[][] getRandomIntMatrix(int rows, int columns) {
+        int[][] matrix = new int[rows][columns];
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < columns; j++) {
                 matrix[i][j] = (int) (Math.random() * 100);
             }
         }
@@ -232,7 +232,7 @@ public class Main {
         askRepeat(Main::changeToCharArray);
     }
 
-    private static void fillMatrix(){
+    private static void fillMatrix() {
         int num = 1;
         int[][] matrix = new int[3][3];
         for (int i = 0; i < 3; i++) {
@@ -243,9 +243,9 @@ public class Main {
         printMatrix(matrix);
         askRepeat(Main::fillMatrix);
     }
-    
-    private static void sumMatrix(){
-        int[][] matrix = getRandomIntMatrix(3,3);
+
+    private static void sumMatrix() {
+        int[][] matrix = getRandomIntMatrix(3, 3);
         System.out.println("Matrix: ");
         printMatrix(matrix);
         int sum = 0;
