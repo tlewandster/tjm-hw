@@ -42,6 +42,8 @@ public class Main {
         sumMatrix();
         System.out.println(SET_GREEN_FONT + "16. Matrix – sum of rows" + RESET_FONT_COLOR);
         sumRowMatrix();
+        System.out.println(SET_GREEN_FONT + "17. Matrix – sum of columns" + RESET_FONT_COLOR);
+        sumColumnMatrix();
     }
 
     private static void askRepeat(Runnable action) {
@@ -273,5 +275,19 @@ public class Main {
             sum = 0;
         }
         askRepeat(Main::sumRowMatrix);
+    }
+
+    private static void sumColumnMatrix() {
+        int[][] matrix = getRandomIntMatrix(3, 2);
+        System.out.println("Matrix: ");
+        printMatrix(matrix);
+        int sumCol0 = 0;
+        int sumCol1 = 0;
+        for (int[] row : matrix) {
+            sumCol0 += row[0];
+            sumCol1 += row[1];
+        }
+        System.out.printf("Sum of column 1: %d%nSum of column 2: %d", sumCol0, sumCol1);
+        askRepeat(Main::sumColumnMatrix);
     }
 }
