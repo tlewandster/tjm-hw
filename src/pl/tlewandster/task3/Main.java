@@ -34,6 +34,8 @@ public class Main {
         swapFirstAndLast();
         System.out.println(SET_GREEN_FONT + "12. Two arrays – sum of elements" + RESET_FONT_COLOR);
         sumTwoArrays();
+        System.out.println(SET_GREEN_FONT + "13. Character Array – String" + RESET_FONT_COLOR);
+        changeToCharArray();
     }
 
     private static void askRepeat(Runnable action) {
@@ -157,32 +159,32 @@ public class Main {
         askRepeat(Main::searchItem);
     }
 
-    private static void reverseArray(){
+    private static void reverseArray() {
         int[] nums = getRandomIntArray(10);
         int[] reversedNums = new int[nums.length];
         System.out.print("Array: ");
         printArray(nums);
         for (int i = 0; i < nums.length; i++) {
-            reversedNums[reversedNums.length-1-i] = nums[i];
+            reversedNums[reversedNums.length - 1 - i] = nums[i];
         }
         System.out.print("Reversed array: ");
         printArray(reversedNums);
         askRepeat(Main::reverseArray);
     }
 
-    private static void swapFirstAndLast(){
+    private static void swapFirstAndLast() {
         int[] nums = getRandomIntArray(5);
         System.out.print("Array: ");
         printArray(nums);
         int temp = nums[0];
-        nums[0] = nums[nums.length-1];
-        nums[nums.length-1] = temp;
+        nums[0] = nums[nums.length - 1];
+        nums[nums.length - 1] = temp;
         System.out.print("Array after swap: ");
         printArray(nums);
         askRepeat(Main::swapFirstAndLast);
     }
 
-    private static void sumTwoArrays(){
+    private static void sumTwoArrays() {
         int length = 5;
         int[] firstNums = getRandomIntArray(length);
         System.out.print("First array: ");
@@ -197,5 +199,16 @@ public class Main {
         System.out.print("Array of sums: ");
         printArray(finalNums);
         askRepeat(Main::sumTwoArrays);
+    }
+
+    private static void changeToCharArray() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Word: ");
+        String word = scanner.nextLine();
+        char[] chars = word.toCharArray();
+        for (char aChar : chars) {
+            System.out.println(aChar);
+        }
+        askRepeat(Main::changeToCharArray);
     }
 }
