@@ -32,7 +32,8 @@ public class Main {
         reverseArray();
         System.out.println(SET_GREEN_FONT + "11. Switching Places" + RESET_FONT_COLOR);
         swapFirstAndLast();
-
+        System.out.println(SET_GREEN_FONT + "12. Two arrays – sum of elements" + RESET_FONT_COLOR);
+        sumTwoArrays();
     }
 
     private static void askRepeat(Runnable action) {
@@ -179,5 +180,22 @@ public class Main {
         System.out.print("Array after swap: ");
         printArray(nums);
         askRepeat(Main::swapFirstAndLast);
+    }
+
+    private static void sumTwoArrays(){
+        int length = 5;
+        int[] firstNums = getRandomIntArray(length);
+        System.out.print("First array: ");
+        printArray(firstNums);
+        int[] secondNums = getRandomIntArray(length);
+        System.out.print("Second array: ");
+        printArray(secondNums);
+        int[] finalNums = new int[length];
+        for (int i = 0; i < length; i++) {
+            finalNums[i] = firstNums[i] + secondNums[i];
+        }
+        System.out.print("Array of sums: ");
+        printArray(finalNums);
+        askRepeat(Main::sumTwoArrays);
     }
 }
