@@ -44,6 +44,8 @@ public class Main {
         sumRowMatrix();
         System.out.println(SET_GREEN_FONT + "17. Matrix – sum of columns" + RESET_FONT_COLOR);
         sumColumnMatrix();
+        System.out.println(SET_GREEN_FONT + "18. Matrix – maximum element" + RESET_FONT_COLOR);
+        findMaxMatrixValue();
     }
 
     private static void askRepeat(Runnable action) {
@@ -289,5 +291,27 @@ public class Main {
         }
         System.out.printf("Sum of column 1: %d%nSum of column 2: %d", sumCol0, sumCol1);
         askRepeat(Main::sumColumnMatrix);
+    }
+
+    private static void findMaxMatrixValue(){
+        int[][] matrix = getRandomIntMatrix(3, 3);
+        System.out.println("Matrix: ");
+        printMatrix(matrix);
+        int[] sortedFlatArray = Arrays.stream(matrix).flatMapToInt(Arrays::stream).sorted().toArray();
+        int[] firstValue = new int[] {sortedFlatArray[sortedFlatArray.length-1],-1,-1};
+        int[] thirdValue = new int[] {sortedFlatArray[sortedFlatArray.length-3],-1,-1};
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                if (matrix[i][j]==firstValue[0] && firstValue[1]==-1){
+                    firstValue[1] = i+1;
+                    firstValue[2] = j+1;
+                } else if (matrix[i][j]==thirdValue[0] && thirdValue[1]==-1){
+                    thirdValue[1] = i+1;
+                    thirdValue[2] = j+1;
+                }
+            }
+        }
+        System.out.printf("Largest value: %d (%d row, %d column)%nThird largest value: %d (%d row, %d column)",firstValue[0],firstValue[1],firstValue[2], thirdValue[0],thirdValue[1],thirdValue[2]);
+        askRepeat(Main::findMaxMatrixValue);
     }
 }
