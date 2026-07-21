@@ -48,6 +48,8 @@ public class Main {
         findMaxMatrixValue();
         System.out.println(SET_GREEN_FONT + "19. Main diagonal of a matrix" + RESET_FONT_COLOR);
         getMatrixDiagonal();
+        System.out.println(SET_GREEN_FONT + "20. Matrix – Row Transposition" + RESET_FONT_COLOR);
+        transposeMatrix();
     }
 
     private static void askRepeat(Runnable action) {
@@ -317,7 +319,7 @@ public class Main {
         askRepeat(Main::findMaxMatrixValue);
     }
 
-    private static void getMatrixDiagonal(){
+    private static void getMatrixDiagonal() {
         int[][] matrix = getRandomIntMatrix(10, 10);
         System.out.println("Matrix: ");
         printMatrix(matrix);
@@ -328,5 +330,27 @@ public class Main {
         System.out.print("Matrix diagonal values: ");
         printArray(diagonalValues);
         askRepeat(Main::getMatrixDiagonal);
+    }
+
+    private static void transposeMatrix() {
+        int[][] matrix = getRandomIntMatrix(5, 5);
+        System.out.println("Matrix: ");
+        printMatrix(matrix);
+        {
+            int[] temp = matrix[0];
+            matrix[0] = matrix[matrix.length - 1];
+            matrix[matrix.length - 1] = temp;
+        }
+        System.out.println("Matrix after row transposition");
+        printMatrix(matrix);
+        for (int row = 0; row < matrix.length; row++) {
+            for (int i = 0; i < (matrix[row].length)/2; i++) {
+                int temp = matrix[row][i];
+                matrix[row][i] = matrix[row][matrix[row].length-1-i];
+                matrix[row][matrix[row].length-1-i] = temp;
+            }
+        }
+        System.out.println("Matrix after diagonal transposition");
+        printMatrix(matrix);
     }
 }
