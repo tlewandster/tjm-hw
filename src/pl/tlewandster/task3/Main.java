@@ -40,6 +40,8 @@ public class Main {
         fillMatrix();
         System.out.println(SET_GREEN_FONT + "15. 3x3 matrix – sum of elements" + RESET_FONT_COLOR);
         sumMatrix();
+        System.out.println(SET_GREEN_FONT + "16. Matrix – sum of rows" + RESET_FONT_COLOR);
+        sumRowMatrix();
     }
 
     private static void askRepeat(Runnable action) {
@@ -256,5 +258,20 @@ public class Main {
         }
         System.out.println("Sum: " + sum);
         askRepeat(Main::sumMatrix);
+    }
+
+    private static void sumRowMatrix() {
+        int[][] matrix = getRandomIntMatrix(3, 2);
+        System.out.println("Matrix: ");
+        printMatrix(matrix);
+        int sum = 0;
+        for (int[] row : matrix) {
+            for (int num : row) {
+                sum += num;
+            }
+            System.out.printf("Sum of row %s: %d%n", Arrays.toString(row), sum);
+            sum = 0;
+        }
+        askRepeat(Main::sumRowMatrix);
     }
 }
