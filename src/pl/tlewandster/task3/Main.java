@@ -30,6 +30,9 @@ public class Main {
         searchItem();
         System.out.println(SET_GREEN_FONT + "10. Reverse array" + RESET_FONT_COLOR);
         reverseArray();
+        System.out.println(SET_GREEN_FONT + "11. Switching Places" + RESET_FONT_COLOR);
+        swapFirstAndLast();
+
     }
 
     private static void askRepeat(Runnable action) {
@@ -164,5 +167,17 @@ public class Main {
         System.out.print("Reversed array: ");
         printArray(reversedNums);
         askRepeat(Main::reverseArray);
+    }
+
+    private static void swapFirstAndLast(){
+        int[] nums = getRandomIntArray(5);
+        System.out.print("Array: ");
+        printArray(nums);
+        int temp = nums[0];
+        nums[0] = nums[nums.length-1];
+        nums[nums.length-1] = temp;
+        System.out.print("Array after swap: ");
+        printArray(nums);
+        askRepeat(Main::swapFirstAndLast);
     }
 }
