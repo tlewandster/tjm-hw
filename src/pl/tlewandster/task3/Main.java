@@ -51,6 +51,12 @@ public class Main {
     private static void printArray(int[] array) {
         System.out.println(Arrays.toString(array));
     }
+    
+    private static void printMatrix(int[][] matrix){
+        for (int[] row : matrix) {
+            System.out.println(Arrays.toString(row));
+        }
+    }
 
     private static int[] getRandomIntArray(int length) {
         int[] nums = new int[length];
@@ -232,9 +238,7 @@ public class Main {
                 matrix[i][j] = num++;
             }
         }
-        for (int[] row : matrix) {
-            System.out.println(Arrays.toString(row));
-        }
+        printMatrix(matrix);
         askRepeat(Main::fillMatrix);
     }
 }
