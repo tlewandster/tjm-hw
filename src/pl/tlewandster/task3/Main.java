@@ -46,6 +46,8 @@ public class Main {
         sumColumnMatrix();
         System.out.println(SET_GREEN_FONT + "18. Matrix – maximum element" + RESET_FONT_COLOR);
         findMaxMatrixValue();
+        System.out.println(SET_GREEN_FONT + "19. Main diagonal of a matrix" + RESET_FONT_COLOR);
+        getMatrixDiagonal();
     }
 
     private static void askRepeat(Runnable action) {
@@ -313,5 +315,18 @@ public class Main {
         }
         System.out.printf("Largest value: %d (%d row, %d column)%nThird largest value: %d (%d row, %d column)", firstValue[0], firstValue[1], firstValue[2], thirdValue[0], thirdValue[1], thirdValue[2]);
         askRepeat(Main::findMaxMatrixValue);
+    }
+
+    private static void getMatrixDiagonal(){
+        int[][] matrix = getRandomIntMatrix(10, 10);
+        System.out.println("Matrix: ");
+        printMatrix(matrix);
+        int[] diagonalValues = new int[matrix.length];
+        for (int i = 0; i < matrix.length; i++) {
+            diagonalValues[i] = matrix[i][i];
+        }
+        System.out.print("Matrix diagonal values: ");
+        printArray(diagonalValues);
+        askRepeat(Main::getMatrixDiagonal);
     }
 }
