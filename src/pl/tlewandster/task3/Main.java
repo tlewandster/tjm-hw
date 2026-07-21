@@ -293,25 +293,25 @@ public class Main {
         askRepeat(Main::sumColumnMatrix);
     }
 
-    private static void findMaxMatrixValue(){
-        int[][] matrix = getRandomIntMatrix(3, 3);
+    private static void findMaxMatrixValue() {
+        int[][] matrix = getRandomIntMatrix(5, 5);
         System.out.println("Matrix: ");
         printMatrix(matrix);
         int[] sortedFlatArray = Arrays.stream(matrix).flatMapToInt(Arrays::stream).sorted().toArray();
-        int[] firstValue = new int[] {sortedFlatArray[sortedFlatArray.length-1],-1,-1};
-        int[] thirdValue = new int[] {sortedFlatArray[sortedFlatArray.length-3],-1,-1};
-        for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix[i].length; j++) {
-                if (matrix[i][j]==firstValue[0] && firstValue[1]==-1){
-                    firstValue[1] = i+1;
-                    firstValue[2] = j+1;
-                } else if (matrix[i][j]==thirdValue[0] && thirdValue[1]==-1){
-                    thirdValue[1] = i+1;
-                    thirdValue[2] = j+1;
+        int[] firstValue = new int[]{sortedFlatArray[sortedFlatArray.length - 1], -1, -1};
+        int[] thirdValue = new int[]{sortedFlatArray[sortedFlatArray.length - 3], -1, -1};
+        for (int row = 0; row < matrix.length; row++) {
+            for (int col = 0; col < matrix[row].length; col++) {
+                if (matrix[row][col] == firstValue[0] && firstValue[1] == -1) {
+                    firstValue[1] = row + 1;
+                    firstValue[2] = col + 1;
+                } else if (matrix[row][col] == thirdValue[0] && thirdValue[1] == -1) {
+                    thirdValue[1] = row + 1;
+                    thirdValue[2] = col + 1;
                 }
             }
         }
-        System.out.printf("Largest value: %d (%d row, %d column)%nThird largest value: %d (%d row, %d column)",firstValue[0],firstValue[1],firstValue[2], thirdValue[0],thirdValue[1],thirdValue[2]);
+        System.out.printf("Largest value: %d (%d row, %d column)%nThird largest value: %d (%d row, %d column)", firstValue[0], firstValue[1], firstValue[2], thirdValue[0], thirdValue[1], thirdValue[2]);
         askRepeat(Main::findMaxMatrixValue);
     }
 }
