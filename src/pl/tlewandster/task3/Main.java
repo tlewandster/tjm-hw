@@ -36,6 +36,8 @@ public class Main {
         sumTwoArrays();
         System.out.println(SET_GREEN_FONT + "13. Character Array – String" + RESET_FONT_COLOR);
         changeToCharArray();
+        System.out.println(SET_GREEN_FONT + "14. 3x3 Matrix – Filling" + RESET_FONT_COLOR);
+        fillMatrix();
     }
 
     private static void askRepeat(Runnable action) {
@@ -210,5 +212,19 @@ public class Main {
             System.out.println(aChar);
         }
         askRepeat(Main::changeToCharArray);
+    }
+
+    private static void fillMatrix(){
+        int num = 1;
+        int[][] matrix = new int[3][3];
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                matrix[i][j] = num++;
+            }
+        }
+        for (int[] row : matrix) {
+            System.out.println(Arrays.toString(row));
+        }
+        askRepeat(Main::fillMatrix);
     }
 }
