@@ -50,6 +50,8 @@ public class Main {
         getMatrixDiagonal();
         System.out.println(SET_GREEN_FONT + "20. Matrix – Row Transposition" + RESET_FONT_COLOR);
         transposeMatrix();
+        System.out.println(SET_GREEN_FONT + "Palindrome" + RESET_FONT_COLOR);
+        checkPalindrome();
     }
 
     private static void askRepeat(Runnable action) {
@@ -344,13 +346,30 @@ public class Main {
         System.out.println("Matrix after row transposition");
         printMatrix(matrix);
         for (int row = 0; row < matrix.length; row++) {
-            for (int i = 0; i < (matrix[row].length)/2; i++) {
+            for (int i = 0; i < (matrix[row].length) / 2; i++) {
                 int temp = matrix[row][i];
-                matrix[row][i] = matrix[row][matrix[row].length-1-i];
-                matrix[row][matrix[row].length-1-i] = temp;
+                matrix[row][i] = matrix[row][matrix[row].length - 1 - i];
+                matrix[row][matrix[row].length - 1 - i] = temp;
             }
         }
         System.out.println("Matrix after diagonal transposition");
         printMatrix(matrix);
+        askRepeat(Main::transposeMatrix);
+    }
+
+    private static void checkPalindrome() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter a sentence to check if it's a palindrome:");
+        String sentence = scanner.nextLine();
+        char[] clearedSentence = sentence.toLowerCase().replace(" ", "").toCharArray();
+        boolean isPalindrome = true;
+        for (int i = 0; i < clearedSentence.length; i++) {
+            if (clearedSentence[i] != clearedSentence[clearedSentence.length - 1 - i]) {
+                isPalindrome = false;
+                break;
+            }
+        }
+        System.out.println(isPalindrome ? "The sentence is a palindrome." : "The sentence is not a palindrome");
+        askRepeat(Main::checkPalindrome);
     }
 }
