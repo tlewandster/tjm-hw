@@ -60,6 +60,16 @@ public class Main {
         return nums;
     }
 
+    private static int[][] getRandomIntMatrix(int columns, int rows) {
+        int[][] matrix = new int[columns][rows];
+        for (int i = 0; i < columns; i++) {
+            for (int j = 0; j < rows; j++) {
+                matrix[i][j] = (int) (Math.random() * 100);
+            }
+        }
+        return matrix;
+    }
+
     private static void createArray() {
         int[] nums = getRandomIntArray(5);
         printArray(nums);
