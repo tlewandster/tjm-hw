@@ -40,7 +40,10 @@ public class Main {
 
         // 8. Silnia iteracyjnie
         int n = 10;
-        System.out.printf("%d! = %d (iteration)%n", n, factorialIter(n));
+        System.out.printf("%d! = %d (iteration) %n", n, factorialIter(n));
+
+        // 9. Silnia rekurencyjnie
+        System.out.printf("%d! = %d (recurrence) %n", n, factorialIter(n));
     }
 
     static void welcome(String name) {
@@ -84,5 +87,12 @@ public class Main {
             result *= i;
         }
         return result;
+    }
+
+    static int factorialRek(int n) {
+        if (n == 0) { // przypadek bazowy — koniec schodzenia
+            return 1;
+        }
+        return n * factorialRek(n - 1); // wywołanie rekurencyjne na mniejszym n
     }
 }
