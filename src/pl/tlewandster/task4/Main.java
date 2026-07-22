@@ -64,6 +64,9 @@ public class Main {
         System.out.printf("%d is %sprime number %n",number, isPrimeNumber(number)?"":"not ");
         number = 24;
         System.out.printf("%d is %sprime number %n",number, isPrimeNumber(number)?"":"not ");
+
+        // 13. Odwrotna kolejność w tablicy
+        System.out.printf("Reversed %s = %s %n",Arrays.toString(numbers),Arrays.toString(reverseArray(numbers)));
     }
 
     static void welcome(String name) {
@@ -135,5 +138,13 @@ public class Main {
             }
         }
         return true;
+    }
+
+    static int[] reverseArray(int[] arr){
+        int[] reversedArray = new int[arr.length];
+        for (int i = 0; i < arr.length; i++) {
+            reversedArray[i] = arr[arr.length-1-i];
+        }
+        return reversedArray;
     }
 }
