@@ -22,6 +22,12 @@ public class Main {
         // 4. Parzystość liczby
         int number = 3;
         System.out.printf("Number %d is %s %n", number, isEven(number)? "even" : "odd");
+
+        // 5. Średnia trzech liczb
+        double firstNumToAvg = 3;
+        double secondNumToAvg = 5;
+        double thirdNumToAvg = 8;
+        System.out.printf("%f, %f, %f average is %.2f",firstNumToAvg,secondNumToAvg,thirdNumToAvg,average(firstNumToAvg,secondNumToAvg,thirdNumToAvg));
     }
 
     static void welcome(String name) {
@@ -38,5 +44,9 @@ public class Main {
 
     static boolean isEven(int number) {
         return number % 2 == 0;
+    }
+
+    static double average(double a, double b, double c){
+        return (a+b+c)/3;
     }
 }
