@@ -88,6 +88,11 @@ public class Main {
         System.out.printf("Sum of numbers 0-%d = %d (recurrence) %n", number, sumNumbersRek(number));
         number = 15;
         System.out.printf("Sum of numbers 0-%d = %d (recurrence) %n", number, sumNumbersRek(number));
+
+        // 17. NWD dwóch liczb – iteracyjnie
+        int firstNumber = 14;
+        int secondNumber = 24;
+        System.out.printf("GCD for %d and %d = %d %n", firstNumber, secondNumber, gcdIter(firstNumber, secondNumber));
     }
 
     static void welcome(String name) {
@@ -191,6 +196,22 @@ public class Main {
         } else {
             return n + sumNumbersRek(n - 1);
         }
+    }
+
+    static int gcdIter(int a, int b) {
+        if (b > a) {
+            int temp;
+            temp = a;
+            a = b;
+            b = temp;
+        }
+        while (a % b != 0) {
+            int tempA = a;
+            int tempB = b;
+            a = tempB;
+            b = tempA % tempB;
+        }
+        return b;
     }
 
 }
