@@ -72,6 +72,14 @@ public class Main {
         int[] firstNums = {24, 82, 80, 19, 64};
         int[] secondNums = {40, 68, 13, 66, 43};
         System.out.printf("Merged %s + %s = %s %n", Arrays.toString(firstNums), Arrays.toString(secondNums), Arrays.toString(mergeArrays(firstNums, secondNums)));
+
+        // 15. Suma cyfr liczby – iteracyjnie
+        number = 5;
+        System.out.printf("Sum of numbers 0-%d = %d (iteration) %n", number, sumNumbersIter(number));
+        number = 10;
+        System.out.printf("Sum of numbers 0-%d = %d (iteration) %n", number, sumNumbersIter(number));
+        number = 15;
+        System.out.printf("Sum of numbers 0-%d = %d (iteration) %n", number, sumNumbersIter(number));
     }
 
     static void welcome(String name) {
@@ -159,5 +167,13 @@ public class Main {
             mergedArray[i] = secondArr[i-firstArr.length];
         }
         return mergedArray;
+    }
+
+    static int sumNumbersIter(int n){
+        int result = 0;
+        for (int i = 0; i <= n; i++) {
+            result += i;
+        }
+        return result;
     }
 }
