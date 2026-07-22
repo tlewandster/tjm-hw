@@ -67,6 +67,11 @@ public class Main {
 
         // 13. Odwrotna kolejność w tablicy
         System.out.printf("Reversed %s = %s %n",Arrays.toString(numbers),Arrays.toString(reverseArray(numbers)));
+
+        // 14. Merge tablicy
+        int[] firstNums = {24, 82, 80, 19, 64};
+        int[] secondNums = {40, 68, 13, 66, 43};
+        System.out.printf("Merged %s + %s = %s %n", Arrays.toString(firstNums), Arrays.toString(secondNums), Arrays.toString(mergeArrays(firstNums, secondNums)));
     }
 
     static void welcome(String name) {
@@ -146,5 +151,13 @@ public class Main {
             reversedArray[i] = arr[arr.length-1-i];
         }
         return reversedArray;
+    }
+
+    static int[] mergeArrays(int[] firstArr, int[] secondArr){
+        int[] mergedArray = Arrays.copyOf(firstArr, firstArr.length+secondArr.length);
+        for (int i = firstArr.length; i < mergedArray.length ; i++) {
+            mergedArray[i] = secondArr[i-firstArr.length];
+        }
+        return mergedArray;
     }
 }
