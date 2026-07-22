@@ -21,13 +21,17 @@ public class Main {
 
         // 4. Parzystość liczby
         int number = 3;
-        System.out.printf("Number %d is %s %n", number, isEven(number)? "even" : "odd");
+        System.out.printf("Number %d is %s %n", number, isEven(number) ? "even" : "odd");
 
         // 5. Średnia trzech liczb
         double firstNumToAvg = 3;
         double secondNumToAvg = 5;
         double thirdNumToAvg = 8;
-        System.out.printf("%f, %f, %f average is %.2f",firstNumToAvg,secondNumToAvg,thirdNumToAvg,average(firstNumToAvg,secondNumToAvg,thirdNumToAvg));
+        System.out.printf("%f, %f, %f average is %.2f %n", firstNumToAvg, secondNumToAvg, thirdNumToAvg, average(firstNumToAvg, secondNumToAvg, thirdNumToAvg));
+
+        // 6. Kategoria wiekowa
+        int age = 52;
+        System.out.printf("Age category for %d years old is %s %n", age, ageCategory(age));
     }
 
     static void welcome(String name) {
@@ -46,7 +50,17 @@ public class Main {
         return number % 2 == 0;
     }
 
-    static double average(double a, double b, double c){
-        return (a+b+c)/3;
+    static double average(double a, double b, double c) {
+        return (a + b + c) / 3;
+    }
+
+    static String ageCategory(int age) {
+        if (age < 12) {
+            return "Child";
+        } else if (age <= 17) {
+            return "Teenager";
+        } else if (age <= 64) {
+            return "Adult";
+        } else return "Senior";
     }
 }
