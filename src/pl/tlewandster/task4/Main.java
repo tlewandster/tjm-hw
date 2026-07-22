@@ -12,7 +12,7 @@ public class Main {
         // 2. Dodawanie liczb
         int firstNumberToBeMultiplied = 3;
         int secondNumberToBeMultiplied = 5;
-        System.out.printf("%d * %d = %d%n", firstNumberToBeMultiplied, secondNumberToBeMultiplied, mult(firstNumberToBeMultiplied, secondNumberToBeMultiplied));
+        System.out.printf("%d * %d = %d%n", firstNumberToBeMultiplied, secondNumberToBeMultiplied, multi(firstNumberToBeMultiplied, secondNumberToBeMultiplied));
 
         // 3. Porównanie liczb
         int firstNumToCompare = 3;
@@ -38,13 +38,16 @@ public class Main {
         changeX(x);
         System.out.printf("x into main scope = %d %n", x);
 
+        // 8. Silnia iteracyjnie
+        int n = 10;
+        System.out.printf("%d! = %d (iteration)%n", n, factorialIter(n));
     }
 
     static void welcome(String name) {
         System.out.printf("Welcome, %s!%n", name);
     }
 
-    static int mult(int a, int b) {
+    static int multi(int a, int b) {
         return a * b;
     }
 
@@ -73,5 +76,13 @@ public class Main {
     static void changeX(int x) {
         x *= 2;
         System.out.printf("x into method scope = %d %n", x);
+    }
+
+    static int factorialIter(int n) {
+        int result = 1;
+        for (int i = 1; i <= n ; i++) {
+            result *= i;
+        }
+        return result;
     }
 }
