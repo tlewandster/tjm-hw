@@ -17,7 +17,11 @@ public class Main {
         // 3. Porównanie liczb
         int firstNumToCompare = 3;
         int secondNumToCompare = 5;
-        System.out.printf("Number %d is greater%n",max(firstNumToCompare,secondNumToCompare));
+        System.out.printf("Number %d is greater%n", max(firstNumToCompare, secondNumToCompare));
+
+        // 4. Parzystość liczby
+        int number = 3;
+        System.out.printf("Number %d is %s %n", number, isEven(number)? "even" : "odd");
     }
 
     static void welcome(String name) {
@@ -30,5 +34,9 @@ public class Main {
 
     static int max(int a, int b) {
         return (a > b) ? a : b;
+    }
+
+    static boolean isEven(int number) {
+        return number % 2 == 0;
     }
 }
