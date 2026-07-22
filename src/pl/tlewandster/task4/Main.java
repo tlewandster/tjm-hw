@@ -1,5 +1,7 @@
 package pl.tlewandster.task4;
 
+import java.util.Arrays;
+
 @SuppressWarnings("JavaPrintToLogpoint")
 
 public class Main {
@@ -44,6 +46,10 @@ public class Main {
 
         // 9. Silnia rekurencyjnie
         System.out.printf("%d! = %d (recurrence) %n", n, factorialIter(n));
+
+        // 10. Suma elementów tablicy
+        int[] numbers = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        System.out.printf("Sum of %s = %d %n", Arrays.toString(numbers), sumArray(numbers));
     }
 
     static void welcome(String name) {
@@ -83,7 +89,7 @@ public class Main {
 
     static int factorialIter(int n) {
         int result = 1;
-        for (int i = 1; i <= n ; i++) {
+        for (int i = 1; i <= n; i++) {
             result *= i;
         }
         return result;
@@ -94,5 +100,13 @@ public class Main {
             return 1;
         }
         return n * factorialRek(n - 1); // wywołanie rekurencyjne na mniejszym n
+    }
+
+    static int sumArray(int[] arr) {
+        int result = 0;
+        for (int i : arr) {
+            result += i;
+        }
+        return result;
     }
 }
