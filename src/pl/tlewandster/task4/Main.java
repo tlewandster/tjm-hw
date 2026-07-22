@@ -50,6 +50,15 @@ public class Main {
         // 10. Suma elementów tablicy
         int[] numbers = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
         System.out.printf("Sum of %s = %d %n", Arrays.toString(numbers), sumArray(numbers));
+
+        // 11. Największy element tablicy
+        numbers = new int[]{20, 55, 60, 84, 65, 6, 60, 51, 33, 14};
+        System.out.printf("Max of %s = %d %n", Arrays.toString(numbers), maxArray(numbers));
+        numbers = new int[]{48, 8, 54, 12, 52, 55, 47, 45, 22, 72};
+        System.out.printf("Max of %s = %d %n", Arrays.toString(numbers), maxArray(numbers));
+        numbers = new int[]{12, 12, 95, 95, 51, 33, 21, 93, 60, 35};
+        System.out.printf("Max of %s = %d %n", Arrays.toString(numbers), maxArray(numbers));
+
     }
 
     static void welcome(String name) {
@@ -108,5 +117,9 @@ public class Main {
             result += i;
         }
         return result;
+    }
+
+    static int maxArray(int[] arr){
+        return Arrays.stream(arr).max().getAsInt();
     }
 }
