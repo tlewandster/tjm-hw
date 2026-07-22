@@ -59,6 +59,11 @@ public class Main {
         numbers = new int[]{12, 12, 95, 95, 51, 33, 21, 93, 60, 35};
         System.out.printf("Max of %s = %d %n", Arrays.toString(numbers), maxArray(numbers));
 
+        // 12. Czy liczba jest pierwsza
+        number = 23;
+        System.out.printf("%d is %sprime number %n",number, isPrimeNumber(number)?"":"not ");
+        number = 24;
+        System.out.printf("%d is %sprime number %n",number, isPrimeNumber(number)?"":"not ");
     }
 
     static void welcome(String name) {
@@ -119,7 +124,16 @@ public class Main {
         return result;
     }
 
-    static int maxArray(int[] arr){
+    static int maxArray(int[] arr) {
         return Arrays.stream(arr).max().getAsInt();
+    }
+
+    static boolean isPrimeNumber(int number) {
+        for (int i = 2; i < number; i++) {
+            if (number % i == 0) {
+                return false;
+            }
+        }
+        return true;
     }
 }
