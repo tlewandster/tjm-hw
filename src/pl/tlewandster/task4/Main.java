@@ -14,7 +14,10 @@ public class Main {
         int secondNumberToBeMultiplied = 5;
         System.out.printf("%d * %d = %d%n", firstNumberToBeMultiplied, secondNumberToBeMultiplied, mult(firstNumberToBeMultiplied, secondNumberToBeMultiplied));
 
-
+        // 3. Porównanie liczb
+        int firstNumToCompare = 3;
+        int secondNumToCompare = 5;
+        System.out.printf("Number %d is greater%n",max(firstNumToCompare,secondNumToCompare));
     }
 
     static void welcome(String name) {
@@ -23,5 +26,9 @@ public class Main {
 
     static int mult(int a, int b) {
         return a * b;
+    }
+
+    static int max(int a, int b) {
+        return (a > b) ? a : b;
     }
 }
