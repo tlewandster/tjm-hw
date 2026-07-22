@@ -32,6 +32,12 @@ public class Main {
         // 6. Kategoria wiekowa
         int age = 52;
         System.out.printf("Age category for %d years old is %s %n", age, ageCategory(age));
+
+        // 7. Zasięg zmiennych
+        int x = 5;
+        changeX(x);
+        System.out.printf("x into main scope = %d %n", x);
+
     }
 
     static void welcome(String name) {
@@ -62,5 +68,10 @@ public class Main {
         } else if (age <= 64) {
             return "Adult";
         } else return "Senior";
+    }
+
+    static void changeX(int x) {
+        x *= 2;
+        System.out.printf("x into method scope = %d %n", x);
     }
 }
