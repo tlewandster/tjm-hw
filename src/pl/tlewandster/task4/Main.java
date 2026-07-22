@@ -61,12 +61,12 @@ public class Main {
 
         // 12. Czy liczba jest pierwsza
         number = 23;
-        System.out.printf("%d is %sprime number %n",number, isPrimeNumber(number)?"":"not ");
+        System.out.printf("%d is %sprime number %n", number, isPrimeNumber(number) ? "" : "not ");
         number = 24;
-        System.out.printf("%d is %sprime number %n",number, isPrimeNumber(number)?"":"not ");
+        System.out.printf("%d is %sprime number %n", number, isPrimeNumber(number) ? "" : "not ");
 
         // 13. Odwrotna kolejność w tablicy
-        System.out.printf("Reversed %s = %s %n",Arrays.toString(numbers),Arrays.toString(reverseArray(numbers)));
+        System.out.printf("Reversed %s = %s %n", Arrays.toString(numbers), Arrays.toString(reverseArray(numbers)));
 
         // 14. Merge tablicy
         int[] firstNums = {24, 82, 80, 19, 64};
@@ -80,6 +80,14 @@ public class Main {
         System.out.printf("Sum of numbers 0-%d = %d (iteration) %n", number, sumNumbersIter(number));
         number = 15;
         System.out.printf("Sum of numbers 0-%d = %d (iteration) %n", number, sumNumbersIter(number));
+
+        // 16. Suma cyfr liczby – iteracyjnie
+        number = 5;
+        System.out.printf("Sum of numbers 0-%d = %d (recurrence) %n", number, sumNumbersRek(number));
+        number = 10;
+        System.out.printf("Sum of numbers 0-%d = %d (recurrence) %n", number, sumNumbersRek(number));
+        number = 15;
+        System.out.printf("Sum of numbers 0-%d = %d (recurrence) %n", number, sumNumbersRek(number));
     }
 
     static void welcome(String name) {
@@ -153,27 +161,36 @@ public class Main {
         return true;
     }
 
-    static int[] reverseArray(int[] arr){
+    static int[] reverseArray(int[] arr) {
         int[] reversedArray = new int[arr.length];
         for (int i = 0; i < arr.length; i++) {
-            reversedArray[i] = arr[arr.length-1-i];
+            reversedArray[i] = arr[arr.length - 1 - i];
         }
         return reversedArray;
     }
 
-    static int[] mergeArrays(int[] firstArr, int[] secondArr){
-        int[] mergedArray = Arrays.copyOf(firstArr, firstArr.length+secondArr.length);
-        for (int i = firstArr.length; i < mergedArray.length ; i++) {
-            mergedArray[i] = secondArr[i-firstArr.length];
+    static int[] mergeArrays(int[] firstArr, int[] secondArr) {
+        int[] mergedArray = Arrays.copyOf(firstArr, firstArr.length + secondArr.length);
+        for (int i = firstArr.length; i < mergedArray.length; i++) {
+            mergedArray[i] = secondArr[i - firstArr.length];
         }
         return mergedArray;
     }
 
-    static int sumNumbersIter(int n){
+    static int sumNumbersIter(int n) {
         int result = 0;
         for (int i = 0; i <= n; i++) {
             result += i;
         }
         return result;
     }
+
+    static int sumNumbersRek(int n) {
+        if (n == 0) {
+            return 0;
+        } else {
+            return n + sumNumbersRek(n - 1);
+        }
+    }
+
 }
