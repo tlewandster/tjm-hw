@@ -29,4 +29,9 @@ public class Car {
     public void setYearOfProduction(int yearOfProduction) {
         this.yearOfProduction = yearOfProduction;
     }
+
+    public void showDifference() {
+        String brand = "local brand name";
+        System.out.printf("this.brand = %s, local brand = %s %n", this.brand, brand);
+    }
 }
