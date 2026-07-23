@@ -4,16 +4,13 @@ public class Car {
     private String brand;
     private int yearOfProduction;
 
-    Car(){
+    Car() {
         this.brand = "Unknown";
         this.yearOfProduction = 2000;
     }
 
-    public void setBrand(String brand) {
+    Car(String brand, int yearOfProduction) {
         this.brand = brand;
-    }
-
-    public void setYearOfProduction(int yearOfProduction) {
         this.yearOfProduction = yearOfProduction;
     }
 
@@ -21,7 +18,15 @@ public class Car {
         return brand;
     }
 
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
+
     public int getYearOfProduction() {
         return yearOfProduction;
+    }
+
+    public void setYearOfProduction(int yearOfProduction) {
+        this.yearOfProduction = yearOfProduction;
     }
 }
