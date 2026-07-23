@@ -1,5 +1,7 @@
 package pl.tlewandster.task5;
 
+import static pl.tlewandster.task5.Utils.*;
+
 @SuppressWarnings("ALL")
 
 public class Main {
@@ -36,15 +38,5 @@ public class Main {
         car2.changeBrand("still unknown");
         System.out.printf("Marka %s, rocznik %d %n", car2.getBrand(), car2.getYearOfProduction());
         insertSeparator();
-    }
-
-    private static void insertTitle(String title) {
-        final String SET_GREEN_FONT = "\u001B[32m";
-        final String RESET_FONT_COLOR = "\u001B[0m";
-        System.out.println(SET_GREEN_FONT + title + RESET_FONT_COLOR);
-    }
-
-    private static void insertSeparator() {
-        System.out.println("-".repeat(50));
     }
 }
