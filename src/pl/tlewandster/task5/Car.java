@@ -4,6 +4,11 @@ public class Car {
     private String brand;
     private int yearOfProduction;
 
+    Car(){
+        this.brand = "Unknown";
+        this.yearOfProduction = 2000;
+    }
+
     public void setBrand(String brand) {
         this.brand = brand;
     }
