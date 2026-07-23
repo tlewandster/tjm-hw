@@ -1,8 +1,9 @@
 package pl.tlewandster.task4;
 
 import java.util.Arrays;
+import java.util.Scanner;
 
-@SuppressWarnings("ManualMinMaxCalculation")
+@SuppressWarnings({"ManualMinMaxCalculation", "JavaPrintToLogpoint"})
 
 public class Main {
     static void main() {
@@ -96,6 +97,9 @@ public class Main {
 
         // 18. NWD dwóch liczb – rekurencyjnie
         System.out.printf("GCD for %d and %d = %d (recurrence) %n", firstNumber, secondNumber, gcdRek(firstNumber, secondNumber));
+
+        // 19. Menu kalkulatora
+        calculate();
     }
 
     static void welcome(String name) {
@@ -216,6 +220,61 @@ public class Main {
             return a;
         }
         return gcdRek(b, a % b);
+    }
+
+    static void calculate() {
+        int[] userChoice;
+        do {
+            showMenu();
+            userChoice = getUserChoice();
+            switch (userChoice[0]){
+                case 1:
+                    System.out.printf("%d + %d = %d %n",userChoice[1], userChoice[2], add(userChoice[1],userChoice[2]));
+                    break;
+                case 2:
+                    System.out.printf("%d - %d = %d %n",userChoice[1], userChoice[2], subtract(userChoice[1],userChoice[2]));
+                    break;
+                case 3:
+                    System.out.printf("%d * %d = %d %n",userChoice[1], userChoice[2], multi(userChoice[1],userChoice[2]));
+                    break;
+                case 0:
+                    System.out.println("Bye...");
+            }
+        } while (userChoice[0] != 0);
+    }
+
+    static void showMenu() {
+        System.out.println("""
+                
+                1 - Add
+                2 - Subtract
+                3 - Multiply
+                0 - Quit
+                """);
+    }
+
+    static int[] getUserChoice() {
+        int menuChoice;
+        int firstNumber = 0;
+        int secondNumber = 0;
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter option [1,2,3,0]: ");
+        menuChoice = scanner.nextInt();
+        if (menuChoice != 0) {
+            System.out.println("Enter 1st number: ");
+            firstNumber = scanner.nextInt();
+            System.out.println("Enter 2nd number: ");
+            secondNumber = scanner.nextInt();
+        }
+        return new int[]{menuChoice, firstNumber, secondNumber};
+    }
+
+    static int add(int a, int b) {
+        return a + b;
+    }
+
+    static int subtract(int a, int b){
+        return a - b;
     }
 
 }
