@@ -34,4 +34,8 @@ public class Car {
         String brand = "local brand name";
         System.out.printf("this.brand = %s, local brand = %s %n", this.brand, brand);
     }
+
+    public void changeBrand(String brand) {
+        this.brand = brand;
+    }
 }

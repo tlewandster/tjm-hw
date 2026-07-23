@@ -3,7 +3,7 @@ package pl.tlewandster.task5;
 @SuppressWarnings("ALL")
 
 public class Main {
-    static void main() {
+    public static void main() {
 
         insertTitle("1. First class and object");
         Car car1 = new Car();
@@ -30,6 +30,11 @@ public class Main {
         car1.showDifference();
         car3.showDifference();
         car5.showDifference();
+        insertSeparator();
+
+        insertTitle("5. Using this in a method");
+        car2.changeBrand("still unknown");
+        System.out.printf("Marka %s, rocznik %d %n", car2.getBrand(), car2.getYearOfProduction());
         insertSeparator();
     }
 
