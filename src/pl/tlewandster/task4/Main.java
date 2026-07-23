@@ -2,7 +2,7 @@ package pl.tlewandster.task4;
 
 import java.util.Arrays;
 
-@SuppressWarnings("JavaPrintToLogpoint")
+@SuppressWarnings("ManualMinMaxCalculation")
 
 public class Main {
     static void main() {
@@ -45,7 +45,7 @@ public class Main {
         System.out.printf("%d! = %d (iteration) %n", n, factorialIter(n));
 
         // 9. Silnia rekurencyjnie
-        System.out.printf("%d! = %d (recurrence) %n", n, factorialIter(n));
+        System.out.printf("%d! = %d (recurrence) %n", n, factorialRek(n));
 
         // 10. Suma elementów tablicy
         int[] numbers = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
@@ -90,9 +90,12 @@ public class Main {
         System.out.printf("Sum of numbers 0-%d = %d (recurrence) %n", number, sumNumbersRek(number));
 
         // 17. NWD dwóch liczb – iteracyjnie
-        int firstNumber = 14;
-        int secondNumber = 24;
-        System.out.printf("GCD for %d and %d = %d %n", firstNumber, secondNumber, gcdIter(firstNumber, secondNumber));
+        int firstNumber = 56;
+        int secondNumber = 14;
+        System.out.printf("GCD for %d and %d = %d (iteration) %n", firstNumber, secondNumber, gcdIter(firstNumber, secondNumber));
+
+        // 18. NWD dwóch liczb – rekurencyjnie
+        System.out.printf("GCD for %d and %d = %d (recurrence) %n", firstNumber, secondNumber, gcdRek(firstNumber, secondNumber));
     }
 
     static void welcome(String name) {
@@ -139,10 +142,10 @@ public class Main {
     }
 
     static int factorialRek(int n) {
-        if (n == 0) { // przypadek bazowy — koniec schodzenia
+        if (n == 0) {
             return 1;
         }
-        return n * factorialRek(n - 1); // wywołanie rekurencyjne na mniejszym n
+        return n * factorialRek(n - 1);
     }
 
     static int sumArray(int[] arr) {
@@ -199,12 +202,6 @@ public class Main {
     }
 
     static int gcdIter(int a, int b) {
-        if (b > a) {
-            int temp;
-            temp = a;
-            a = b;
-            b = temp;
-        }
         while (a % b != 0) {
             int tempA = a;
             int tempB = b;
@@ -212,6 +209,13 @@ public class Main {
             b = tempA % tempB;
         }
         return b;
+    }
+
+    static int gcdRek(int a, int b) {
+        if (b == 0) {
+            return a;
+        }
+        return gcdRek(b, a % b);
     }
 
 }

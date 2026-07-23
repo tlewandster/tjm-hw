@@ -5,7 +5,7 @@
     - Wywołaj ją kilka razy z różnymi imionami.
 
 2. **Dodawanie liczb**
-    - Napisz metodę `mult(int a, int b)`, która zwraca mnozenie dwóch liczb całkowitych.
+    - Napisz metodę `mult(int a, int b)`, która zwraca mnożenie dwóch liczb całkowitych.
     - W `main` wczytaj dwie liczby, wywołaj metodę i wypisz zwrócony wynik.
 
 3. **Porównanie liczb**
@@ -56,7 +56,7 @@
 
 14. **Merge tablicy**
     - Napisz metodę `merge(int[] tab1, int[] tab2)`, która zwraca nową tablicę z elementami obu tablic.
-    - W `main` wypisz zmergowana tablicę.
+    - W `main` wypisz zmergowaną tablicę.
 
 15. **Suma cyfr liczby – iteracyjnie**
     - Napisz metodę `sumaCyfrIter(int n)`, która zwraca sumę cyfr liczby całkowitej dodatniej w pętli.
