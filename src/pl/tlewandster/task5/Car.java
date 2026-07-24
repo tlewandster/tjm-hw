@@ -12,7 +12,7 @@ public class Car {
     Car(String brand, int yearOfProduction) {
         this.brand = brand;
         this.yearOfProduction = yearOfProduction;
-        count += 1;
+        count++;
     }
 
     public static int getCount() {

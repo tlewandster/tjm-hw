@@ -84,5 +84,9 @@ public class Main {
         person4.introduceYourself();
         person5.introduceYourself();
         printSeparator();
+
+        printTitle("15. Static vs non-static – difference");
+        System.out.printf("%d persons created.%n", Person.getNumberOfPeople());
+        printSeparator();
     }
 }
