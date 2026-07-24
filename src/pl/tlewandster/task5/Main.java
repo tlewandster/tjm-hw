@@ -57,5 +57,13 @@ public class Main {
         printTitle("9. Static field");
         System.out.printf("%d cars created.%n", Car.getCount());
         printSeparator();
+
+        printTitle("10. Array of objects");
+        Car cars[] =  {car1, car3, car5};
+        for (Car car : cars) {
+            car.introduceYourself();
+        }
+        printSeparator();
+
     }
 }
