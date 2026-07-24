@@ -13,6 +13,14 @@ public class Person {
         numberOfPeople++;
     }
 
+    public int getAge() {
+        return age;
+    }
+
+    public String getName() {
+        return name;
+    }
+
     Person(String name){
         this(name, age=0);
     }
@@ -28,6 +36,10 @@ public class Person {
     public void introduceYourself(String greeting) {
         System.out.println(greeting);
         introduceYourself();
+    }
+
+    public boolean isAdult() {
+        return this.age >= 18;
     }
 
 

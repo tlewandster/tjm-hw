@@ -1,6 +1,7 @@
 package pl.tlewandster.task5;
 
-import static pl.tlewandster.task5.Utils.*;
+import static pl.tlewandster.task5.Utils.printSeparator;
+import static pl.tlewandster.task5.Utils.printTitle;
 
 @SuppressWarnings("ALL")
 
@@ -59,7 +60,7 @@ public class Main {
         printSeparator();
 
         printTitle("10. Array of objects");
-        Car cars[] =  {car1, car3, car5};
+        Car cars[] = {car1, car3, car5};
         for (Car car : cars) {
             car.introduceYourself();
         }
@@ -79,7 +80,7 @@ public class Main {
         printSeparator();
 
         printTitle("13. Constructor overloading – Person");
-        Person person4 = new Person("Joanna",20);
+        Person person4 = new Person("Joanna", 20);
         Person person5 = new Person("JoAntek");
         person4.introduceYourself();
         person5.introduceYourself();
@@ -87,6 +88,15 @@ public class Main {
 
         printTitle("15. Static vs non-static – difference");
         System.out.printf("%d persons created.%n", Person.getNumberOfPeople());
+        printSeparator();
+
+        printTitle("16. Array of people and method");
+        Person persons[] = {person1, person2, person3, person4, person5};
+        System.out.print("Aduld persons from array: ");
+        for (Person person : persons) {
+            if (person.isAdult()) System.out.printf("%s(%d) ",person.getName(),person.getAge());
+        }
+        System.out.println();
         printSeparator();
     }
 }
