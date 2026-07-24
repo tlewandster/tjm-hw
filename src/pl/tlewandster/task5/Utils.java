@@ -6,11 +6,11 @@ public final class Utils {
 
     private Utils() {}
 
-    static void insertTitle(String title) {
+    static void printTitle(String title) {
         System.out.println(SET_GREEN_FONT + title + RESET_FONT_COLOR);
     }
 
-    static void insertSeparator() {
+    static void printSeparator() {
         System.out.println("-".repeat(50));
     }
 }
