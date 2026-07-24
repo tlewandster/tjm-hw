@@ -1,9 +1,9 @@
 package pl.tlewandster.task5;
 
 public class Car {
+    private static int count;
     private String brand;
     private int yearOfProduction;
-    private static int count;
 
     Car() {
         this("Unknown", 2000);
@@ -12,18 +12,22 @@ public class Car {
     Car(String brand, int yearOfProduction) {
         this.brand = brand;
         this.yearOfProduction = yearOfProduction;
-        count +=1;
+        count += 1;
     }
 
     public static int getCount() {
         return count;
     }
 
+    public static void classDescription() {
+        System.out.println("This class represents cars.");
+    }
+
     public void setBrand(String brand) {
         this.brand = brand;
     }
 
-     public void setYearOfProduction(int yearOfProduction) {
+    public void setYearOfProduction(int yearOfProduction) {
         this.yearOfProduction = yearOfProduction;
     }
 
@@ -38,9 +42,5 @@ public class Car {
 
     public void introduceYourself() {
         System.out.printf("I am a car of brand %s, from year %d %n", this.brand, this.yearOfProduction);
-    }
-
-    public static void classDescription() {
-        System.out.println("This class represents cars.");
     }
 }
