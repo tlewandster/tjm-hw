@@ -120,6 +120,15 @@ public class Main {
         printSeparator();
 
         printTitle("20. Simple Shop");
+        Product[] groceryProducts = {
+                new Product("Bread", 4.50),
+                new Product("Milk 3.2%", 3.99),
+                new Product("Eggs (10 pcs)", 12.50),
+                new Product("Butter 200g", 7.99),
+                new Product("Yellow cheese", 18.00)
+        };
+        Shop shop = new Shop("Ladybug", groceryProducts);
+        shop.showProducts();
         printSeparator();
     }
 }
