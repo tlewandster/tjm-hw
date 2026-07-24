@@ -4,7 +4,7 @@ package pl.tlewandster.task5;
 
 public class Person {
     private static int numberOfPeople;
-    private String name;
+    private final String name;
     private int age;
 
     Person(String name, int age) {

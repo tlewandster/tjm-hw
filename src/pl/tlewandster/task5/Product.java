@@ -3,7 +3,7 @@ package pl.tlewandster.task5;
 import java.math.BigDecimal;
 
 public class Product {
-    private String name;
+    private final String name;
     private BigDecimal price;
 
     public Product(String name, Double price) {

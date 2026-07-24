@@ -1,8 +1,8 @@
 package pl.tlewandster.task5;
 
 public class Shop {
-    private String name;
-    private Product[] products;
+    private final String name;
+    private final Product[] products;
 
     public Shop(String name, Product[] products) {
         this.name = name;
