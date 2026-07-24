@@ -98,5 +98,9 @@ public class Main {
         }
         System.out.println();
         printSeparator();
+
+        printTitle("17. Method with object parameter");
+        System.out.printf("The age difference between %s and %s is %d years. %n", person4.getName(), person5.getName(), person4.compareAge(person5));
+        printSeparator();
     }
 }

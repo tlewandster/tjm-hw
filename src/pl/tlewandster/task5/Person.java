@@ -3,14 +3,22 @@ package pl.tlewandster.task5;
 @SuppressWarnings("JavaPrintToLogpoint")
 
 public class Person {
+    private static int numberOfPeople;
     private String name;
     private int age;
-    private static int numberOfPeople;
 
     Person(String name, int age) {
         this.name = name;
         this.age = age;
         numberOfPeople++;
+    }
+
+    Person(String name) {
+        this(name, age = 0);
+    }
+
+    public static int getNumberOfPeople() {
+        return numberOfPeople;
     }
 
     public int getAge() {
@@ -19,14 +27,6 @@ public class Person {
 
     public String getName() {
         return name;
-    }
-
-    Person(String name){
-        this(name, age=0);
-    }
-
-    public static int getNumberOfPeople() {
-        return numberOfPeople;
     }
 
     public void introduceYourself() {
@@ -42,5 +42,8 @@ public class Person {
         return this.age >= 18;
     }
 
+    public int compareAge(Person other) {
+        return Math.abs(this.age - other.age);
+    }
 
 }
