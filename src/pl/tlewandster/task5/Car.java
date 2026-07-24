@@ -5,8 +5,7 @@ public class Car {
     private int yearOfProduction;
 
     Car() {
-        this.brand = "Unknown";
-        this.yearOfProduction = 2000;
+        this("Unknown", 2000);
     }
 
     Car(String brand, int yearOfProduction) {

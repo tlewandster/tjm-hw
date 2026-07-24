@@ -38,5 +38,10 @@ public class Main {
         car2.changeBrand("still unknown");
         System.out.printf("Marka %s, rocznik %d %n", car2.getBrand(), car2.getYearOfProduction());
         printSeparator();
+
+        printTitle("6. Calling one constructor from another");
+        Car car6 = new Car();
+        System.out.printf("Marka %s, rocznik %d %n", car6.getBrand(), car6.getYearOfProduction());
+        printSeparator();
     }
 }
