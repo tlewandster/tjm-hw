@@ -77,5 +77,12 @@ public class Main {
         printTitle("12. Method overloading – Person");
         person2.introduceYourself("Hi, everyone!");
         printSeparator();
+
+        printTitle("13. Constructor overloading – Person");
+        Person person4 = new Person("Joanna",20);
+        Person person5 = new Person("JoAntek");
+        person4.introduceYourself();
+        person5.introduceYourself();
+        printSeparator();
     }
 }

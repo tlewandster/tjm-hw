@@ -6,9 +6,13 @@ public class Person {
     private String name;
     private int age;
 
-    Person (String name, int age) {
+    Person(String name, int age) {
         this.name = name;
         this.age = age;
+    }
+
+    Person(String name){
+        this(name, age=0);
     }
 
     public void introduceYourself() {
