@@ -106,9 +106,9 @@ public class Main {
         printSeparator();
 
         printTitle("18. Simple class Product");
-        Product product1 = new Product("Coffee Beans", BigDecimal.valueOf(15.99));
-        Product product2 = new Product("Wireless Mouse", BigDecimal.valueOf(29.50));
-        Product product3 = new Product("Clean Code Book", BigDecimal.valueOf(42.00));
+        Product product1 = new Product("Coffee Beans", 15.99);
+        Product product2 = new Product("Wireless Mouse", 29.50);
+        Product product3 = new Product("Clean Code Book", 42.00);
         product1.showProduct();
         product2.showProduct();
         product3.showProduct();
