@@ -3,6 +3,7 @@ package pl.tlewandster.task5;
 public class Car {
     private String brand;
     private int yearOfProduction;
+    private static int count;
 
     Car() {
         this("Unknown", 2000);
@@ -11,6 +12,15 @@ public class Car {
     Car(String brand, int yearOfProduction) {
         this.brand = brand;
         this.yearOfProduction = yearOfProduction;
+        count +=1;
+    }
+
+    public static int getCount() {
+        return count;
+    }
+
+    public static void setCount(int count) {
+        Car.count = count;
     }
 
     public String getBrand() {

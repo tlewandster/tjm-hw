@@ -53,5 +53,9 @@ public class Main {
         printTitle("8. Static method");
         Car.classDescription();
         printSeparator();
+
+        printTitle("9. Static field");
+        System.out.printf("%d cars created.%n", Car.getCount());
+        printSeparator();
     }
 }
