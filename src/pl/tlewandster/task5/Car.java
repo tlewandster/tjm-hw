@@ -37,4 +37,8 @@ public class Car {
     public void changeBrand(String brand) {
         this.brand = brand;
     }
+
+    public void printCarInfo() {
+        System.out.printf("Marka %s, rocznik %d %n", this.getBrand(), this.getYearOfProduction());
+    }
 }

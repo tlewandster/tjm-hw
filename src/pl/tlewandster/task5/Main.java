@@ -11,21 +11,21 @@ public class Main {
         Car car1 = new Car();
         car1.setBrand("Fiat 125p");
         car1.setYearOfProduction(1990);
-        System.out.printf("Marka %s, rocznik %d %n", car1.getBrand(), car1.getYearOfProduction());
+        car1.printCarInfo();
         printSeparator();
 
         printTitle("2. No-args constructor");
         Car car2 = new Car();
-        System.out.printf("Marka %s, rocznik %d %n", car2.getBrand(), car2.getYearOfProduction());
+        car2.printCarInfo();
         printSeparator();
 
         printTitle("3. Constructor with parameters");
         Car car3 = new Car("Polonez", 1999);
         Car car4 = new Car("VW Golf", 2002);
         Car car5 = new Car("Skoda Favorit", 1992);
-        System.out.printf("Marka %s, rocznik %d %n", car3.getBrand(), car3.getYearOfProduction());
-        System.out.printf("Marka %s, rocznik %d %n", car4.getBrand(), car4.getYearOfProduction());
-        System.out.printf("Marka %s, rocznik %d %n", car5.getBrand(), car5.getYearOfProduction());
+        car3.printCarInfo();
+        car4.printCarInfo();
+        car5.printCarInfo();
         printSeparator();
 
         printTitle("4. Fields vs local variables");
@@ -36,12 +36,12 @@ public class Main {
 
         printTitle("5. Using this in a method");
         car2.changeBrand("still unknown");
-        System.out.printf("Marka %s, rocznik %d %n", car2.getBrand(), car2.getYearOfProduction());
+        car2.printCarInfo();
         printSeparator();
 
         printTitle("6. Calling one constructor from another");
         Car car6 = new Car();
-        System.out.printf("Marka %s, rocznik %d %n", car6.getBrand(), car6.getYearOfProduction());
+        car6.printCarInfo();
         printSeparator();
     }
 }
