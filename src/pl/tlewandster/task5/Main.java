@@ -65,5 +65,13 @@ public class Main {
         }
         printSeparator();
 
+        printTitle("11. Simple class Person");
+        Person person1 = new Person("Rychu", 60);
+        Person person2 = new Person("Zdzichu", 65);
+        Person person3 = new Person("Stachu", 40);
+        person1.introduceYourself();
+        person2.introduceYourself();
+        person3.introduceYourself();
+        printSeparator();
     }
 }
