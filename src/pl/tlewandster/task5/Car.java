@@ -41,4 +41,8 @@ public class Car {
     public void introduceYourself() {
         System.out.printf("I am a car of brand %s, from year %d %n", this.getBrand(), this.getYearOfProduction());
     }
+
+    public static void classDescription() {
+        System.out.println("This class represents cars.");
+    }
 }

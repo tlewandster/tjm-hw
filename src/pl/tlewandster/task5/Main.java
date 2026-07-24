@@ -50,5 +50,8 @@ public class Main {
         car6.introduceYourself();
         printSeparator();
 
+        printTitle("8. Static method");
+        Car.classDescription();
+        printSeparator();
     }
 }
