@@ -38,7 +38,7 @@ public class Car {
         this.brand = brand;
     }
 
-    public void printCarInfo() {
-        System.out.printf("Marka %s, rocznik %d %n", this.getBrand(), this.getYearOfProduction());
+    public void introduceYourself() {
+        System.out.printf("I am a car of brand %s, from year %d %n", this.getBrand(), this.getYearOfProduction());
     }
 }

@@ -11,21 +11,21 @@ public class Main {
         Car car1 = new Car();
         car1.setBrand("Fiat 125p");
         car1.setYearOfProduction(1990);
-        car1.printCarInfo();
+        car1.introduceYourself();
         printSeparator();
 
         printTitle("2. No-args constructor");
         Car car2 = new Car();
-        car2.printCarInfo();
+        car2.introduceYourself();
         printSeparator();
 
         printTitle("3. Constructor with parameters");
         Car car3 = new Car("Polonez", 1999);
         Car car4 = new Car("VW Golf", 2002);
         Car car5 = new Car("Skoda Favorit", 1992);
-        car3.printCarInfo();
-        car4.printCarInfo();
-        car5.printCarInfo();
+        car3.introduceYourself();
+        car4.introduceYourself();
+        car5.introduceYourself();
         printSeparator();
 
         printTitle("4. Fields vs local variables");
@@ -36,12 +36,19 @@ public class Main {
 
         printTitle("5. Using this in a method");
         car2.changeBrand("still unknown");
-        car2.printCarInfo();
+        car2.introduceYourself();
         printSeparator();
 
         printTitle("6. Calling one constructor from another");
         Car car6 = new Car();
-        car6.printCarInfo();
+        car6.introduceYourself();
         printSeparator();
+
+        printTitle("7. Instance method");
+        car2.introduceYourself();
+        car4.introduceYourself();
+        car6.introduceYourself();
+        printSeparator();
+
     }
 }
