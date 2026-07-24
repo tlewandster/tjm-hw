@@ -96,7 +96,7 @@ public class Main {
         Person persons[] = {person1, person2, person3, person4, person5};
         System.out.print("Aduld persons from array: ");
         for (Person person : persons) {
-            if (person.isAdult()) System.out.printf("%s(%d) ",person.getName(),person.getAge());
+            if (person.isAdult()) System.out.printf("%s(%d) ", person.getName(), person.getAge());
         }
         System.out.println();
         printSeparator();
@@ -112,6 +112,14 @@ public class Main {
         product1.showProduct();
         product2.showProduct();
         product3.showProduct();
+        printSeparator();
+
+        printTitle("19. Overloaded methods in Product");
+        product1.reducePrice(5.00);
+        product2.reducePrice(28.50, "being run over by a truck during a delivery...");
+        printSeparator();
+
+        printTitle("20. Simple Shop");
         printSeparator();
     }
 }
