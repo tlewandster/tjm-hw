@@ -1,6 +1,5 @@
 package pl.tlewandster.task6;
 
-import java.util.Arrays;
 import java.util.List;
 
 import static pl.tlewandster.task6.Utils.printSeparator;
@@ -84,6 +83,15 @@ public class Main {
         for (Currency currency : Currency.values()) {
             System.out.printf("%s symbol -> %s %n", currency.name(), currency.getSymbol());
         }
+        printSeparator();
+
+        printTitle("13. Enum in the calculator");
+        int a = 2;
+        int b = 4;
+        System.out.printf("%d - %d = %.2f %n", a, b, Operation.SUBTRACT.calculate(a, b));
+        System.out.printf("%d + %d = %.2f %n", a, b, Operation.ADD.calculate(a, b));
+        System.out.printf("%d x %d= %.2f %n", a, b, Operation.MULTIPLY.calculate(a, b));
+        System.out.printf("%d / %d = %.2f %n", a, b, Operation.DIVIDE.calculate(a, b));
         printSeparator();
     }
 }
