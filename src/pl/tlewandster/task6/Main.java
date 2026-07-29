@@ -79,5 +79,12 @@ public class Main {
         }
         System.out.println("Number of days in a year: " + sumOfDays);
         printSeparator();
+
+        printTitle("12. Enum – currency");
+        for (Currency currency : Currency.values()) {
+            System.out.printf("%s symbol -> %s %n", currency.name(), currency.getSymbol());
+        }
+        printSeparator();
     }
 }
+
