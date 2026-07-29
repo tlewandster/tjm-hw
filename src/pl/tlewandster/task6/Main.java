@@ -99,6 +99,12 @@ public class Main {
             System.out.printf("%s - %b %n", orderStatus.name(), orderStatus.isActive());
         }
         printSeparator();
+
+        printTitle("15. Enums and Overloaded Constructors"); // Why does the title refer to an overloaded constructor?
+        for (Planet planet : Planet.values()){
+            System.out.printf("%s - %.2f kg/m3 %n", planet.name(), planet.getDensity());
+        }
+        printSeparator();
     }
 }
 
