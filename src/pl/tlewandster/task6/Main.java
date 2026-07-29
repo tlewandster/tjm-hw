@@ -143,6 +143,13 @@ public class Main {
         System.out.printf("%d x %d= %.2f %n", a, b, Calculation.MULTIPLY.calculate(a, b));
         System.out.printf("%d / %d = %.2f %n", a, b, Calculation.DIVIDE.calculate(a, b));
         printSeparator();
+
+        printTitle("20. Enum & equals vs ==");
+        Month january = Month.JANUARY;
+        Month anotherJanuary = Month.JANUARY;
+        System.out.println("== -> " + (january == anotherJanuary));
+        System.out.println(("equals -> " + january.equals(anotherJanuary)));
+        printSeparator();
     }
 }
 
