@@ -42,7 +42,7 @@ public class Main {
 
         printTitle("6. Enum with a field and a constructor");
         for (Month month : Month.values()) {
-            System.out.printf("%s has %d days %n", month.name(),month.getDays());
+            System.out.printf("%s has %d days %n", month.name(), month.getDays());
         }
         printSeparator();
 
@@ -67,8 +67,17 @@ public class Main {
         Person marek = new Person("Marek", DayOfWeek.WEDNESDAY);
         Person darek = new Person("Darek", DayOfWeek.FRIDAY);
         for (Person person : List.of(jarek, marek, darek)) {
-            System.out.printf("%s has %s off %n", person.getName(),person.getDayOff());
+            System.out.printf("%s has %s off %n", person.getName(), person.getDayOff());
         }
+        printSeparator();
+
+        printTitle("11. Enum in an array");
+        Month[] months = Month.values();
+        int sumOfDays = 0;
+        for (Month month : months) {
+            sumOfDays += month.getDays();
+        }
+        System.out.println("Number of days in a year: " + sumOfDays);
         printSeparator();
     }
 }
