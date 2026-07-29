@@ -1,5 +1,8 @@
 package pl.tlewandster.task6;
 
+import java.util.Arrays;
+import java.util.List;
+
 import static pl.tlewandster.task6.Utils.printSeparator;
 import static pl.tlewandster.task6.Utils.printTitle;
 
@@ -55,7 +58,16 @@ public class Main {
 
         printTitle("9. An enum with several fields");
         for (Month month : Month.values()) {
-            System.out.println(month.name() + " isHolidaySeasion: " + month.isHolidaySeason());
+            System.out.println(month.name() + " isHolidaySeason: " + month.isHolidaySeason());
+        }
+        printSeparator();
+
+        printTitle("10. Enum in a class – person and day off");
+        Person jarek = new Person("Jarek", DayOfWeek.MONDAY);
+        Person marek = new Person("Marek", DayOfWeek.WEDNESDAY);
+        Person darek = new Person("Darek", DayOfWeek.FRIDAY);
+        for (Person person : List.of(jarek, marek, darek)) {
+            System.out.printf("%s has %s off %n", person.getName(),person.getDayOff());
         }
         printSeparator();
     }
