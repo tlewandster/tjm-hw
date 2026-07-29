@@ -1,6 +1,7 @@
 package pl.tlewandster.task6;
 
 import java.util.List;
+import java.util.Scanner;
 
 import static pl.tlewandster.task6.Utils.printSeparator;
 import static pl.tlewandster.task6.Utils.printTitle;
@@ -108,6 +109,25 @@ public class Main {
 
         printTitle("16. Enum as singleton");
         Logger.INSTANCE.log("test");
+        printSeparator();
+
+        printTitle("17. Enum and switch – menu");
+        System.out.println("Menu:");
+        for (MenuOption value : MenuOption.values()) {
+            System.out.printf("%d - %s %n", value.ordinal(), value.name());
+        }
+        String action = "";
+        while (action.isEmpty()) {
+            System.out.println("Enter your choice: ");
+            Scanner scanner = new Scanner(System.in);
+            action = switch (scanner.nextInt()) {
+                case 0 -> MenuOption.values()[0].getAction();
+                case 1 -> MenuOption.values()[1].getAction();
+                case 2 -> MenuOption.values()[2].getAction();
+                default -> "";
+            };
+        }
+        System.out.printf("Ok, %s %n", action);
         printSeparator();
     }
 }
