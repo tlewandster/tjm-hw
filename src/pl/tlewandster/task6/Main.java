@@ -29,8 +29,12 @@ public class Main {
             case WEDNESDAY, THURSDAY -> "Midweek";
             case FRIDAY, SATURDAY, SUNDAY -> "Weekend";
         };
-        System.out.println(partOfWeek);
+        System.out.println("Wednesday: " + partOfWeek);
+        printSeparator();
+
+        printTitle("5. Enum z metodą");
+        System.out.println("Wednesday: " + wednesday.isWeekend());
+        System.out.println("Sunday: " + DayOfWeek.SUNDAY.isWeekend());
         printSeparator();
     }
 }
-
