@@ -93,6 +93,12 @@ public class Main {
         System.out.printf("%d x %d= %.2f %n", a, b, Operation.MULTIPLY.calculate(a, b));
         System.out.printf("%d / %d = %.2f %n", a, b, Operation.DIVIDE.calculate(a, b));
         printSeparator();
+
+        printTitle("14. Enum – Order Status");
+        for (OrderStatus orderStatus : OrderStatus.values()) {
+            System.out.printf("%s - %b %n", orderStatus.name(), orderStatus.isActive());
+        }
+        printSeparator();
     }
 }
 
