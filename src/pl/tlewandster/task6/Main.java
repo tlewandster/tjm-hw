@@ -136,6 +136,13 @@ public class Main {
             System.out.printf("%s - category %s %n", product.getName(), product.getCategory());
         }
         printSeparator();
+
+        printTitle("19. Enum with an abstract method");
+        System.out.printf("%d - %d = %.2f %n", a, b, Calculation.SUBTRACT.calculate(a, b));
+        System.out.printf("%d + %d = %.2f %n", a, b, Calculation.ADD.calculate(a, b));
+        System.out.printf("%d x %d= %.2f %n", a, b, Calculation.MULTIPLY.calculate(a, b));
+        System.out.printf("%d / %d = %.2f %n", a, b, Calculation.DIVIDE.calculate(a, b));
+        printSeparator();
     }
 }
 
