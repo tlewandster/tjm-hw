@@ -52,5 +52,11 @@ public class Main {
         System.out.printf("Results of the July-to-July comparison: %d %n", Month.JULY.compareTo(Month.JULY));
         System.out.printf("Results of the July-to-June comparison: %d %n", Month.JULY.compareTo(Month.JUNE));
         printSeparator();
+
+        printTitle("9. An enum with several fields");
+        for (Month month : Month.values()) {
+            System.out.println(month.name() + " isHolidaySeasion: " + month.isHolidaySeason());
+        }
+        printSeparator();
     }
 }
