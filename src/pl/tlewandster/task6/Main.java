@@ -46,5 +46,11 @@ public class Main {
         printTitle("7. Enum and the toString() method");
         System.out.println(Month.JULY);
         printSeparator();
+
+        printTitle("8. Enum – sorting");
+        System.out.printf("Results of the June-to-July comparison: %d %n", Month.JUNE.compareTo(Month.JULY));
+        System.out.printf("Results of the July-to-July comparison: %d %n", Month.JULY.compareTo(Month.JULY));
+        System.out.printf("Results of the July-to-June comparison: %d %n", Month.JULY.compareTo(Month.JUNE));
+        printSeparator();
     }
 }
