@@ -42,5 +42,9 @@ public class Main {
             System.out.printf("%s has %d days %n", month.name(),month.getDays());
         }
         printSeparator();
+
+        printTitle("7. Enum and the toString() method");
+        System.out.println(Month.JULY);
+        printSeparator();
     }
 }

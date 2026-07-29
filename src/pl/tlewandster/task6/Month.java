@@ -12,4 +12,9 @@ public enum Month {
     public int getDays() {
         return days;
     }
+
+    @Override
+    public String toString() {
+        return String.format("%s (days: %d)",this.name(), this.getDays());
+    }
 }
