@@ -129,6 +129,13 @@ public class Main {
         }
         System.out.printf("Ok, %s %n", action);
         printSeparator();
+
+        printTitle("18. Enum and Object Array");
+        Product[] products = {new Product("cabbage", Product.Category.FOOD), new Product("TV", Product.Category.ELECTRONICS), new Product("hat", Product.Category.CLOTHING)};
+        for ( Product product : products){
+            System.out.printf("%s - category %s %n", product.getName(), product.getCategory());
+        }
+        printSeparator();
     }
 }
 
