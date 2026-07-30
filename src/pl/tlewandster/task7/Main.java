@@ -38,6 +38,12 @@ public class Main {
         BigDecimal discountedPrice = price1.multiply(discountPercent.divide(new BigDecimal(100)));
         System.out.println("Price after 15% discount: " + discountedPrice.setScale(2,RoundingMode.HALF_UP));
         printSeparator();
+
+        printTitle("5. VAT tax");
+        BigDecimal netPrice = new BigDecimal("13.99");
+        BigDecimal grossPrice = netPrice.multiply(new BigDecimal("1.23")).setScale(2,RoundingMode.HALF_UP);
+        System.out.println(netPrice + " + 23% VAT = " + grossPrice);
+        printSeparator();
     }
 }
 
