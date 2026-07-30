@@ -3,6 +3,7 @@ package pl.tlewandster.task7;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.Arrays;
+import java.util.Scanner;
 
 import static pl.tlewandster.task7.Utils.*;
 
@@ -62,6 +63,21 @@ public class Main {
             sumOfCart = sumOfCart.add(p);
         }
         System.out.printf("Sum of cart: %s %n", sumOfCart);
+        printSeparator();
+
+        printTitle("8. Average price");
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Number of products: ");
+        int numberOfProducts = scanner.nextInt();
+        scanner.nextLine();
+        BigDecimal sum = BigDecimal.ZERO;
+        for (int i = 0; i < numberOfProducts; i++) {
+            System.out.println("Price of product: ");
+            BigDecimal productPrice = new BigDecimal(scanner.nextLine());
+            sum = sum.add(productPrice);
+        }
+        BigDecimal avgPrice = sum.divide(new BigDecimal(numberOfProducts), 2, RoundingMode.HALF_UP);
+        System.out.printf("Average price: %s %n", avgPrice);
         printSeparator();
 
     }
