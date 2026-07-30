@@ -26,7 +26,11 @@ public class Main {
         System.out.printf("%s vs %s %n", bigDecimal,bigDecimal1);
         printSeparator();
 
-
+        printTitle("3. Rounding prices");
+        BigDecimal price = new BigDecimal("10.56789");
+        price = price.setScale(2,RoundingMode.HALF_UP);
+        System.out.println(price);
+        printSeparator();
     }
 }
 
