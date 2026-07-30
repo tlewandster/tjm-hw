@@ -17,7 +17,7 @@ public class Main {
         System.out.println("Sum " + value1.add(value2));
         System.out.println("Difference " + value1.subtract(value2));
         System.out.println("Product " + value1.multiply(value2));
-        System.out.println("Quotient " + value1.divide(value2, RoundingMode.UP));
+        System.out.println("Quotient " + value1.divide(value2, RoundingMode.HALF_UP));
         printSeparator();
 
         printTitle("2. BigDecimal from String");
@@ -30,6 +30,13 @@ public class Main {
         BigDecimal price = new BigDecimal("10.56789");
         price = price.setScale(2,RoundingMode.HALF_UP);
         System.out.println(price);
+        printSeparator();
+
+        printTitle("4. Calculating discount");
+        BigDecimal price1 = new BigDecimal("13.99");
+        BigDecimal discountPercent = new BigDecimal("15");
+        BigDecimal discountedPrice = price1.multiply(discountPercent.divide(new BigDecimal(100)));
+        System.out.println("Price after 15% discount: " + discountedPrice.setScale(2,RoundingMode.HALF_UP));
         printSeparator();
     }
 }
