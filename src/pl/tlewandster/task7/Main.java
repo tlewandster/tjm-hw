@@ -2,6 +2,7 @@ package pl.tlewandster.task7;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.util.Arrays;
 
 import static pl.tlewandster.task7.Utils.*;
 
@@ -34,8 +35,8 @@ public class Main {
         printTitle("4. Calculating discount");
         BigDecimal price1 = new BigDecimal(getRandomPriceString());
         BigDecimal discount = new BigDecimal("0.15");
-        BigDecimal discountedPrice = price1.subtract(price1.multiply(discount));
-        System.out.println("Price " + price1 +" after 15% discount: " + discountedPrice.setScale(2, RoundingMode.HALF_UP));
+        BigDecimal discountedPrice = price1.subtract(price1.multiply(discount).setScale(2, RoundingMode.HALF_UP));
+        System.out.println("Price " + price1 + " after 15% discount: " + discountedPrice);
         printSeparator();
 
         printTitle("5. VAT tax");
@@ -49,6 +50,19 @@ public class Main {
         BigDecimal price3 = new BigDecimal(getRandomPriceString());
         int compared = price2.compareTo(price3);
         System.out.printf("%s is %sgreater then %s %n", price2, compared > 0 ? "" : "not ", price3);
+
+        printTitle("7. Shopping cart sum");
+        BigDecimal[] prices = new BigDecimal[10];
+        for (int i = 0; i < prices.length; i++) {
+            prices[i] = new BigDecimal(getRandomPriceString());
+        }
+        System.out.printf("Cart: %s %n", Arrays.toString(prices));
+        BigDecimal sumOfCart = BigDecimal.ZERO;
+        for (BigDecimal p : prices) {
+            sumOfCart = sumOfCart.add(p);
+        }
+        System.out.printf("Sum of cart: %s %n", sumOfCart);
+        printSeparator();
 
     }
 }
