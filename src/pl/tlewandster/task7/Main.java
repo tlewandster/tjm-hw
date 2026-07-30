@@ -20,6 +20,12 @@ public class Main {
         System.out.println("Quotient " + value1.divide(value2, RoundingMode.UP));
         printSeparator();
 
+        printTitle("2. BigDecimal from String");
+        BigDecimal bigDecimal = new BigDecimal("3.333");
+        BigDecimal bigDecimal1 = new BigDecimal(3.333);
+        System.out.printf("%s vs %s %n", bigDecimal,bigDecimal1);
+        printSeparator();
+
 
     }
 }
