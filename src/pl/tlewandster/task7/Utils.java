@@ -14,4 +14,8 @@ public final class Utils {
     static void printSeparator() {
         System.out.println("-".repeat(50));
     }
+
+    static String getRandomPriceString() {
+        return String.format("%.2f",Math.random()*100).replace(",",".");
+    }
 }

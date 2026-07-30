@@ -3,8 +3,7 @@ package pl.tlewandster.task7;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
-import static pl.tlewandster.task7.Utils.printSeparator;
-import static pl.tlewandster.task7.Utils.printTitle;
+import static pl.tlewandster.task7.Utils.*;
 
 @SuppressWarnings("JavaPrintToLogpoint")
 public class Main {
@@ -23,27 +22,34 @@ public class Main {
         printTitle("2. BigDecimal from String");
         BigDecimal bigDecimal = new BigDecimal("3.333");
         BigDecimal bigDecimal1 = new BigDecimal(3.333);
-        System.out.printf("%s vs %s %n", bigDecimal,bigDecimal1);
+        System.out.printf("%s vs %s %n", bigDecimal, bigDecimal1);
         printSeparator();
 
         printTitle("3. Rounding prices");
         BigDecimal price = new BigDecimal("10.56789");
-        price = price.setScale(2,RoundingMode.HALF_UP);
+        price = price.setScale(2, RoundingMode.HALF_UP);
         System.out.println(price);
         printSeparator();
 
         printTitle("4. Calculating discount");
-        BigDecimal price1 = new BigDecimal("13.99");
-        BigDecimal discountPercent = new BigDecimal("15");
-        BigDecimal discountedPrice = price1.multiply(discountPercent.divide(new BigDecimal(100)));
-        System.out.println("Price after 15% discount: " + discountedPrice.setScale(2,RoundingMode.HALF_UP));
+        BigDecimal price1 = new BigDecimal(getRandomPriceString());
+        BigDecimal discount = new BigDecimal("0.15");
+        BigDecimal discountedPrice = price1.subtract(price1.multiply(discount));
+        System.out.println("Price " + price1 +" after 15% discount: " + discountedPrice.setScale(2, RoundingMode.HALF_UP));
         printSeparator();
 
         printTitle("5. VAT tax");
-        BigDecimal netPrice = new BigDecimal("13.99");
-        BigDecimal grossPrice = netPrice.multiply(new BigDecimal("1.23")).setScale(2,RoundingMode.HALF_UP);
+        BigDecimal netPrice = new BigDecimal(getRandomPriceString());
+        BigDecimal grossPrice = netPrice.multiply(new BigDecimal("1.23")).setScale(2, RoundingMode.HALF_UP);
         System.out.println(netPrice + " + 23% VAT = " + grossPrice);
         printSeparator();
+
+        printTitle("6. Comparing prices");
+        BigDecimal price2 = new BigDecimal(getRandomPriceString());
+        BigDecimal price3 = new BigDecimal(getRandomPriceString());
+        int compared = price2.compareTo(price3);
+        System.out.printf("%s is %sgreater then %s %n", price2, compared > 0 ? "" : "not ", price3);
+
     }
 }
 
