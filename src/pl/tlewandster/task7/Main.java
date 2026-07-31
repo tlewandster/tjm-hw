@@ -95,8 +95,22 @@ public class Main {
         printTitle("11. String – basic operations");
         String text = scanner.nextLine();
         String reversedText = new StringBuilder(text).reverse().toString();
-        System.out.printf("Length: %d, uppercased: %s, lowercased: %s, reversed: %s", text.length(), text.toUpperCase(), text.toLowerCase(), reversedText);
+        System.out.printf("Length: %d, uppercased: %s, lowercased: %s, reversed: %s %n", text.length(), text.toUpperCase(), text.toLowerCase(), reversedText);
         printSeparator();
+
+        printTitle("12. String – searching");
+        String sentence = "contains() returns true if and only if this string contains the specified sequence of char values.";
+        String word = "and";
+        boolean isContainsed = sentence.contains(word);
+        int index = sentence.indexOf(word);
+        System.out.println("sentence = " + sentence);
+        System.out.println("word = " + word);
+        System.out.println("isContainsed = " + isContainsed);
+        System.out.println("index = " + index);
+        printSeparator();
+
+
+
 
     }
 }
