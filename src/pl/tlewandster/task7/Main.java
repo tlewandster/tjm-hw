@@ -65,20 +65,20 @@ public class Main {
         System.out.printf("Sum of cart: %s %n", sumOfCart);
         printSeparator();
 
-        printTitle("8. Average price");
+//        printTitle("8. Average price");
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Number of products: ");
-        int numberOfProducts = scanner.nextInt();
-        scanner.nextLine();
-        BigDecimal sum = BigDecimal.ZERO;
-        for (int i = 0; i < numberOfProducts; i++) {
-            System.out.println("Price of product: ");
-            BigDecimal productPrice = new BigDecimal(scanner.nextLine());
-            sum = sum.add(productPrice);
-        }
-        BigDecimal avgPrice = sum.divide(new BigDecimal(numberOfProducts), 2, RoundingMode.HALF_UP);
-        System.out.printf("Average price: %s %n", avgPrice);
-        printSeparator();
+//        System.out.println("Number of products: ");
+//        int numberOfProducts = scanner.nextInt();
+//        scanner.nextLine();
+//        BigDecimal sum = BigDecimal.ZERO;
+//        for (int i = 0; i < numberOfProducts; i++) {
+//            System.out.println("Price of product: ");
+//            BigDecimal productPrice = new BigDecimal(scanner.nextLine());
+//            sum = sum.add(productPrice);
+//        }
+//        BigDecimal avgPrice = sum.divide(new BigDecimal(numberOfProducts), 2, RoundingMode.HALF_UP);
+//        System.out.printf("Average price: %s %n", avgPrice);
+//        printSeparator();
 
         printTitle("9. Prices in different currencies");
         BigDecimal plnPrice = new BigDecimal(getRandomPriceString());
@@ -91,6 +91,13 @@ public class Main {
         System.out.printf("double 0.1 + 0.2 = %f %n", 0.1 + 0.2);
         System.out.printf("BigDecimal 0.1 + 0.2 = %s %n", new BigDecimal("0.1").add(new BigDecimal("0.2")));
         printSeparator();
+
+        printTitle("11. String – basic operations");
+        String text = scanner.nextLine();
+        String reversedText = new StringBuilder(text).reverse().toString();
+        System.out.printf("Length: %d, uppercased: %s, lowercased: %s, reversed: %s", text.length(), text.toUpperCase(), text.toLowerCase(), reversedText);
+        printSeparator();
+
     }
 }
 
