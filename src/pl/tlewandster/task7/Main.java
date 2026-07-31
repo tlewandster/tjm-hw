@@ -132,7 +132,13 @@ public class Main {
         }
         printSeparator();
 
-
+        printTitle("16. String – checking prefix and suffix");
+        System.out.println("Enter sentence: ");
+        sentence = scanner.nextLine();
+        System.out.printf("Sentence%s starts with 'Java' and%s ends with '2025' %n",
+                sentence.startsWith("Java")?"":" not",
+                sentence.endsWith("2025")?"":" not");
+        printSeparator();
 
     }
 }
