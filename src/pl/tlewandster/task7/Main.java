@@ -167,6 +167,12 @@ public class Main {
         BigDecimal payment = billAmount.divide(new BigDecimal(numOfPeoples), 2, RoundingMode.HALF_UP);
         System.out.printf("Bill: %s, %d peoples, each pay %s %n", billAmount, numOfPeoples, payment);
         printSeparator();
+
+        printTitle("20. Rounding up");
+        BigDecimal lastPrice = new BigDecimal(getRandomPriceString());
+        BigDecimal lastPriceRounded = lastPrice.setScale(0, RoundingMode.CEILING).setScale(2);
+        System.out.printf("%s -> %s %n", lastPrice, lastPriceRounded);
+        printSeparator();
     }
 }
 
