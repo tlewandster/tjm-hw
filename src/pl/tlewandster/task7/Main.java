@@ -112,7 +112,7 @@ public class Main {
         printTitle("13. String – replacing fragments");
         sentence = "replace() Returns a string resulting from replacing all occurrences of oldChar in this string with newChar.";
         System.out.println("Before: " + sentence);
-        System.out.printf("After: %s %n", sentence.replace(" ","_").replace(",",""));
+        System.out.printf("After: %s %n", sentence.replace(" ", "_").replace(",", ""));
         printSeparator();
 
         printTitle("14. String – comparison");
@@ -136,9 +136,23 @@ public class Main {
         System.out.println("Enter sentence: ");
         sentence = scanner.nextLine();
         System.out.printf("Sentence%s starts with 'Java' and%s ends with '2025' %n",
-                sentence.startsWith("Java")?"":" not",
-                sentence.endsWith("2025")?"":" not");
+                sentence.startsWith("Java") ? "" : " not",
+                sentence.endsWith("2025") ? "" : " not");
         printSeparator();
+
+        printTitle("17. Combining BigDecimal and String");
+        String productName = "Milk";
+        BigDecimal productPrice = new BigDecimal(getRandomPriceString());
+        String summary = new StringBuilder()
+                .append("Product: ")
+                .append(productName.toUpperCase())
+                .append(", price: ")
+                .append(productPrice)
+                .append(" PLN")
+                .toString();
+        System.out.println(summary);
+        printSeparator();
+
 
     }
 }
