@@ -109,8 +109,11 @@ public class Main {
         System.out.println("index = " + index);
         printSeparator();
 
-
-
+        printTitle("13. String – replacing fragments");
+        sentence = "replace() Returns a string resulting from replacing all occurrences of oldChar in this string with newChar.";
+        System.out.println("Before: " + sentence);
+        System.out.printf("After: %s %n", sentence.replace(" ","_").replace(",",""));
+        printSeparator();
 
     }
 }
