@@ -115,6 +115,15 @@ public class Main {
         System.out.printf("After: %s %n", sentence.replace(" ","_").replace(",",""));
         printSeparator();
 
+        printTitle("14. String – comparison");
+        String string1 = "KajaK";
+        String string2 = "kaJak";
+        System.out.printf("%s vs %s %n", string1, string2);
+        System.out.printf("equals() %b %n", string1.equals(string2));
+        System.out.printf("equalsIgnoreCase() %b %n", string1.equalsIgnoreCase(string2));
+        printSeparator();
+
+
     }
 }
 
