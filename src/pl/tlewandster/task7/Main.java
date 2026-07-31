@@ -3,6 +3,7 @@ package pl.tlewandster.task7;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 import static pl.tlewandster.task7.Utils.*;
@@ -151,6 +152,13 @@ public class Main {
                 .append(" PLN")
                 .toString();
         System.out.println(summary);
+        printSeparator();
+
+        printTitle("18. Formatting prices");
+        List<BigDecimal> somePrices = List.of(new BigDecimal(10), new BigDecimal(20), new BigDecimal(30));
+        for (BigDecimal somePrice : somePrices) {
+            System.out.println(somePrice.setScale(2,RoundingMode.HALF_UP) + " zł");
+        }
         printSeparator();
 
 
