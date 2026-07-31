@@ -157,11 +157,16 @@ public class Main {
         printTitle("18. Formatting prices");
         List<BigDecimal> somePrices = List.of(new BigDecimal(10), new BigDecimal(20), new BigDecimal(30));
         for (BigDecimal somePrice : somePrices) {
-            System.out.println(somePrice.setScale(2,RoundingMode.HALF_UP) + " zł");
+            System.out.println(somePrice.setScale(2, RoundingMode.HALF_UP) + " zł");
         }
         printSeparator();
 
-
+        printTitle("19. Splitting a bill");
+        BigDecimal billAmount = new BigDecimal(getRandomPriceString());
+        int numOfPeoples = 3;
+        BigDecimal payment = billAmount.divide(new BigDecimal(numOfPeoples), 2, RoundingMode.HALF_UP);
+        System.out.printf("Bill: %s, %d peoples, each pay %s %n", billAmount, numOfPeoples, payment);
+        printSeparator();
     }
 }
 
