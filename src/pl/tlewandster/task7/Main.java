@@ -101,11 +101,11 @@ public class Main {
         printTitle("12. String – searching");
         String sentence = "contains() returns true if and only if this string contains the specified sequence of char values.";
         String word = "and";
-        boolean isContainsed = sentence.contains(word);
+        boolean isContained = sentence.contains(word);
         int index = sentence.indexOf(word);
         System.out.println("sentence = " + sentence);
         System.out.println("word = " + word);
-        System.out.println("isContainsed = " + isContainsed);
+        System.out.println("isContained = " + isContained);
         System.out.println("index = " + index);
         printSeparator();
 
@@ -122,6 +122,16 @@ public class Main {
         System.out.printf("equals() %b %n", string1.equals(string2));
         System.out.printf("equalsIgnoreCase() %b %n", string1.equalsIgnoreCase(string2));
         printSeparator();
+
+        printTitle("15. String – splitting text");
+        sentence = "Splits this string around matches of the given regular expression.";
+        System.out.println(sentence);
+        String[] splitedSentence = sentence.split(" ");
+        for (String s : splitedSentence) {
+            System.out.println(s);
+        }
+        printSeparator();
+
 
 
     }
