@@ -4,11 +4,11 @@ import java.time.*;
 import java.util.Map;
 
 public class Flight {
-    private String flightNumber;
-    private String departureAirport;
-    private String arrivalAirport;
-    private ZonedDateTime departureTime;
-    private ZonedDateTime arrivalTime;
+    private final String flightNumber;
+    private final String departureAirport;
+    private final String arrivalAirport;
+    private final ZonedDateTime departureTime;
+    private final ZonedDateTime arrivalTime;
 
     public String getFlightNumber() {
         return flightNumber;
