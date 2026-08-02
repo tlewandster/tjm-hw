@@ -4,16 +4,6 @@ import java.time.*;
 import java.util.Map;
 
 public class Flight {
-    private final String flightNumber;
-    private final String departureAirport;
-    private final String arrivalAirport;
-    private final ZonedDateTime departureTime;
-    private final ZonedDateTime arrivalTime;
-
-    public String getFlightNumber() {
-        return flightNumber;
-    }
-
     private static final Map<String, ZoneId> IATA_TO_ZONE = Map.of(
             "WAW", ZoneId.of("Europe/Warsaw"),
             "LCJ", ZoneId.of("Europe/Warsaw"),
@@ -23,14 +13,24 @@ public class Flight {
             "CCU", ZoneId.of("Asia/Kolkata"),
             "SIN", ZoneId.of("Asia/Singapore"),
             "LHR", ZoneId.of("Europe/London")
+//            "XXX", ZoneId.of("Invalid/Zone")
     );
+    private final String flightNumber;
+    private final String departureAirport;
+    private final String arrivalAirport;
+    private final ZonedDateTime departureTime;
+    private final ZonedDateTime arrivalTime;
 
-    Flight(String flightNumber, String departureDate, String departureTime, String departureAirport, String arrivalDate, String arrivalTime, String arrivalAirport){
+    Flight(String flightNumber, String departureDate, String departureTime, String departureAirport, String arrivalDate, String arrivalTime, String arrivalAirport) {
         this.flightNumber = flightNumber;
         this.departureAirport = departureAirport;
         this.arrivalAirport = arrivalAirport;
         this.departureTime = LocalDate.parse(departureDate).atTime(LocalTime.parse(departureTime)).atZone(IATA_TO_ZONE.get(this.departureAirport));
         this.arrivalTime = LocalDate.parse(arrivalDate).atTime(LocalTime.parse(arrivalTime)).atZone(IATA_TO_ZONE.get(this.arrivalAirport));
+    }
+
+    public String getFlightNumber() {
+        return flightNumber;
     }
 
     public Duration calculateFlightDuration() {
