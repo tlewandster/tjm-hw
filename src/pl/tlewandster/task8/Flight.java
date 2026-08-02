@@ -21,12 +21,12 @@ public class Flight {
             "LHR", ZoneId.of("Europe/London")
     );
 
-    Flight(String flightNumber, LocalTime departureTime, LocalDate departureDate, String departureAirport, LocalTime arrivalTime, LocalDate arrivalDate, String arrivalAirport){
+    Flight(String flightNumber, String departureDate, String departureTime, String departureAirport, String arrivalDate, String arrivalTime, String arrivalAirport){
         this.flightNumber = flightNumber;
         this.departureAirport = departureAirport;
         this.arrivalAirport = arrivalAirport;
-        this.departureTime = departureDate.atTime(departureTime).atZone(IATA_TO_ZONE.get(this.departureAirport));
-        this.arrivalTime = arrivalDate.atTime(arrivalTime).atZone(IATA_TO_ZONE.get(this.arrivalAirport));
+        this.departureTime = LocalDate.parse(departureDate).atTime(LocalTime.parse(departureTime)).atZone(IATA_TO_ZONE.get(this.departureAirport));
+        this.arrivalTime = LocalDate.parse(arrivalDate).atTime(LocalTime.parse(arrivalTime)).atZone(IATA_TO_ZONE.get(this.arrivalAirport));
     }
 
 //    public Duration calculateFlightDuration(){
