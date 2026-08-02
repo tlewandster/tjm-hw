@@ -10,6 +10,10 @@ public class Flight {
     private ZonedDateTime departureTime;
     private ZonedDateTime arrivalTime;
 
+    public String getFlightNumber() {
+        return flightNumber;
+    }
+
     private static final Map<String, ZoneId> IATA_TO_ZONE = Map.of(
             "WAW", ZoneId.of("Europe/Warsaw"),
             "LCJ", ZoneId.of("Europe/Warsaw"),
@@ -29,7 +33,9 @@ public class Flight {
         this.arrivalTime = LocalDate.parse(arrivalDate).atTime(LocalTime.parse(arrivalTime)).atZone(IATA_TO_ZONE.get(this.arrivalAirport));
     }
 
-//    public Duration calculateFlightDuration(){
-//
-//    }
+    public Duration calculateFlightDuration() {
+        Instant departureInstant = departureTime.toInstant();
+        Instant arrivalInstant = arrivalTime.toInstant();
+        return Duration.between(departureInstant, arrivalInstant);
+    }
 }
