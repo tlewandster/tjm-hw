@@ -13,7 +13,6 @@ public class Flight {
             "CCU", ZoneId.of("Asia/Kolkata"),
             "SIN", ZoneId.of("Asia/Singapore"),
             "LHR", ZoneId.of("Europe/London")
-//            "XXX", ZoneId.of("Invalid/Zone")
     );
     private final String flightNumber;
     private final String departureAirport;
@@ -25,11 +24,11 @@ public class Flight {
         this.flightNumber = flightNumber;
         this.departureAirport = departureAirport;
         this.arrivalAirport = arrivalAirport;
+        validateAirportZone(this.departureAirport);
+        validateAirportZone((this.arrivalAirport));
         this.departureTime = LocalDate.parse(departureDate).atTime(LocalTime.parse(departureTime)).atZone(IATA_TO_ZONE.get(this.departureAirport));
         this.arrivalTime = LocalDate.parse(arrivalDate).atTime(LocalTime.parse(arrivalTime)).atZone(IATA_TO_ZONE.get(this.arrivalAirport));
-        if (this.arrivalTime.toInstant().isBefore(this.departureTime.toInstant())){
-            throw new IllegalArgumentException("Arrival time must be after departure time.");
-        }
+        validateArrivalAndDepartureTime(this.departureTime, this.arrivalTime);
     }
 
     public String getFlightNumber() {
@@ -40,5 +39,17 @@ public class Flight {
         Instant departureInstant = departureTime.toInstant();
         Instant arrivalInstant = arrivalTime.toInstant();
         return Duration.between(departureInstant, arrivalInstant);
+    }
+
+    void validateAirportZone(String airport) {
+        if (!IATA_TO_ZONE.containsKey(airport)) {
+            throw new DateTimeException("Unknown time zone for departure airport: " + airport);
+        }
+    }
+
+    void validateArrivalAndDepartureTime(ZonedDateTime departureTime, ZonedDateTime arrivalTime) {
+        if (arrivalTime.toInstant().isBefore(departureTime.toInstant())) {
+            throw new IllegalArgumentException("Arrival time must be after departure time.");
+        }
     }
 }
