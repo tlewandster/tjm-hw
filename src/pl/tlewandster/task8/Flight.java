@@ -43,7 +43,7 @@ public class Flight {
 
     void validateAirportZone(String airport) {
         if (!IATA_TO_ZONE.containsKey(airport)) {
-            throw new DateTimeException("Unknown time zone for departure airport: " + airport);
+            throw new DateTimeException("Unknown time zone for airport: " + airport);
         }
     }
 
