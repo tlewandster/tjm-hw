@@ -27,6 +27,9 @@ public class Flight {
         this.arrivalAirport = arrivalAirport;
         this.departureTime = LocalDate.parse(departureDate).atTime(LocalTime.parse(departureTime)).atZone(IATA_TO_ZONE.get(this.departureAirport));
         this.arrivalTime = LocalDate.parse(arrivalDate).atTime(LocalTime.parse(arrivalTime)).atZone(IATA_TO_ZONE.get(this.arrivalAirport));
+        if (this.arrivalTime.toInstant().isBefore(this.departureTime.toInstant())){
+            throw new IllegalArgumentException("Arrival time must be after departure time.");
+        }
     }
 
     public String getFlightNumber() {
