@@ -35,7 +35,7 @@ public class Main {
                         .toString();
                 System.out.println(summary);
             } catch (Exception e) {
-                System.out.println("Flight No." + f[0] + " - " + e.getMessage());
+                System.out.println("Flight No." + f[0] + " - " + "\u001B[31m" + e.getMessage() + "\u001B[0m");
             }
         }
     }
