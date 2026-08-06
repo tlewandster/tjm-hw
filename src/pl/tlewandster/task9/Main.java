@@ -18,5 +18,8 @@ public class Main {
         } finally {
             System.out.println("Transaction Completed");
         }
+
+        // Zadanie 4: Multi‑catch i decyzja o reakcji
+        CommandProcessor.demo();
     }
 }
