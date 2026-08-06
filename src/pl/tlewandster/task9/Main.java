@@ -21,5 +21,8 @@ public class Main {
 
         // Zadanie 4: Multi‑catch i decyzja o reakcji
         CommandProcessor.demo();
+
+        // Zadanie 5: Walidacja adresu e-mail (regex)
+        EmailValidator.validate("email@gmail.com");
     }
 }
