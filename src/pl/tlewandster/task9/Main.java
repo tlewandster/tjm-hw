@@ -8,5 +8,15 @@ public class Main {
 
         // Zadanie 2: Parser liczby dodatniej (chaining, unchecked)
         NumberParser.parsePositiveInt("2");
+
+        // Zadanie 3: Konto i wyjątek checked (throws)
+        BankAccount account = new BankAccount(500);
+        try {
+            account.withdraw(2000);
+        } catch (InsufficientFundsException e) {
+            System.out.println(e.getMessage());
+        } finally {
+            System.out.println("Transaction Completed");
+        }
     }
 }
