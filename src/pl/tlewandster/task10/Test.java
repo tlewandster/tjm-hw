@@ -3,10 +3,11 @@ package pl.tlewandster.task10;
 @SuppressWarnings({"JavaPrintToLogpoint", "unused"})
 public class Test {
     static void main() {
-        test_1();
+        test1();
+        test2();
     }
 
-    static void test_1(){
+    static void test1() {
         System.out.println("Test 1.1");
         Pair<Integer, String> testPair1 = Pair.of(1, "a");
         Pair<Integer, String> testPair2 = Pair.of(1, "a");
@@ -29,5 +30,9 @@ public class Test {
         Pair<String, String> testPair5 = Pair.of("A", "B");
 //        testPair5.first = "B";
         System.out.println("java: first has private access in pl.tlewandster.task10.Pair");
+    }
+
+    static void test2() {
+
     }
 }
