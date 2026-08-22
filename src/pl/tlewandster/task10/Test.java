@@ -16,5 +16,11 @@ public class Test {
         System.out.println("p1EqualsP2 = " + p1EqualsP2);
         System.out.println("p1EqualsP3 = " + p1EqualsP3);
         System.out.println("p1HashcodetoP2Hashcode = " + p1HashcodetoP2Hashcode);
+        System.out.println();
+
+        System.out.println("Test 1.2");
+        Pair<Integer, String> p4 = Pair.of(null, "x");
+        System.out.println("p4.first() = " + p4.first());
+        System.out.println(p4);
     }
 }
