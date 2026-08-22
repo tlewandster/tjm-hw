@@ -1,5 +1,6 @@
 package pl.tlewandster.task10;
 
+@SuppressWarnings("unused")
 public final class Pair<T, U> {
     private final T first;
     private final U second;

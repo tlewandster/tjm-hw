@@ -1,5 +1,6 @@
 package pl.tlewandster.task10;
 
+@SuppressWarnings({"JavaPrintToLogpoint", "unused"})
 public class Test {
     static void main() {
         test_1();
@@ -10,12 +11,12 @@ public class Test {
         Pair<Integer, String> testPair1 = Pair.of(1, "a");
         Pair<Integer, String> testPair2 = Pair.of(1, "a");
         Pair<Integer, String> testPair3 = Pair.of(1, "b");
-        boolean testPair1EqualstestPair2 = testPair1.equals(testPair2);
-        boolean testPair1EqualstestPair3 = testPair1.equals(testPair3);
-        boolean testPair1HashcodetotestPair2Hashcode = testPair1.hashCode() == testPair2.hashCode();
-        System.out.println("testPair1EqualstestPair2 = " + testPair1EqualstestPair2);
-        System.out.println("testPair1EqualstestPair3 = " + testPair1EqualstestPair3);
-        System.out.println("testPair1HashcodetotestPair2Hashcode = " + testPair1HashcodetotestPair2Hashcode);
+        boolean testPair1EqualsTestPair2 = testPair1.equals(testPair2);
+        boolean testPair1EqualsTestPair3 = testPair1.equals(testPair3);
+        boolean testPair1HashcodeToTestPair2Hashcode = testPair1.hashCode() == testPair2.hashCode();
+        System.out.println("testPair1EqualsTestPair2 = " + testPair1EqualsTestPair2);
+        System.out.println("testPair1EqualsTestPair3 = " + testPair1EqualsTestPair3);
+        System.out.println("testPair1HashcodeToTestPair2Hashcode = " + testPair1HashcodeToTestPair2Hashcode);
         System.out.println();
 
         System.out.println("Test 1.2");
