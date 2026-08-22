@@ -4,6 +4,7 @@ package pl.tlewandster;
 // Posted by shakram02
 // Retrieved 2026-08-22, License - CC BY-SA 3.0
 
+@SuppressWarnings("ALL")
 public class ConsoleColors {
     // Reset
     public static final String RESET = "\033[0m";  // Text Reset

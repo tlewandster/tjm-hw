@@ -1,6 +1,9 @@
 package pl.tlewandster.task10;
 
-import static pl.tlewandster.ConsoleColors.*;
+import java.util.Arrays;
+
+import static pl.tlewandster.ConsoleColors.BLUE_BOLD;
+import static pl.tlewandster.ConsoleColors.RESET;
 
 @SuppressWarnings({"JavaPrintToLogpoint", "unused"})
 public class Test {
@@ -9,8 +12,8 @@ public class Test {
         test2();
     }
 
-    static void printTestHeading(String heading){
-        System.out.println(BLUE_BOLD + heading + RESET);
+    static void printTestHeading(String heading) {
+        System.out.println("\n" + BLUE_BOLD + heading + RESET);
     }
 
     static void test1() {
@@ -24,13 +27,11 @@ public class Test {
         System.out.println("testPair1EqualsTestPair2 = " + testPair1EqualsTestPair2);
         System.out.println("testPair1EqualsTestPair3 = " + testPair1EqualsTestPair3);
         System.out.println("testPair1HashcodeToTestPair2Hashcode = " + testPair1HashcodeToTestPair2Hashcode);
-        System.out.println();
 
         printTestHeading("Test 1.2");
         Pair<Integer, String> testPair4 = Pair.of(null, "x");
         System.out.println("testPair4.first() = " + testPair4.first());
         System.out.println(testPair4);
-        System.out.println();
 
         printTestHeading("Test 1.3");
         Pair<String, String> testPair5 = Pair.of("A", "B");
@@ -39,6 +40,28 @@ public class Test {
     }
 
     static void test2() {
+        printTestHeading("Test 2.1");
+        String[] arr = {"A", "B", "C"};
+        ArrayUtils.swap(arr, 0, 2);
+        System.out.println(Arrays.toString(arr));
+
+        printTestHeading("Test 2.2");
+        Integer[] nums = {1, 2, 3};
+        try {
+            ArrayUtils.swap(nums, -1, 0);
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        try {
+            ArrayUtils.swap(nums, 0, 3);
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+
+        printTestHeading("Test 2.3");
+        arr = new String[] {"X", "Y"};
+        ArrayUtils.swap(arr, 1, 1);
+        System.out.println(Arrays.toString(arr));
 
     }
 }

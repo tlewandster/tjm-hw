@@ -4,7 +4,7 @@ public final class ArrayUtils {
     private ArrayUtils() {
     }
 
-    public static <T> boolean isOutOfBounds(T[] arr, int i) {
+    private static <T> boolean isOutOfBounds(T[] arr, int i) {
         return i < 0 || i >= arr.length;
     }
 
@@ -12,8 +12,15 @@ public final class ArrayUtils {
         if (arr == null) {
             throw new NullPointerException();
         }
-        if (isOutOfBounds(arr,i)||isOutOfBounds(arr,j)){
+        if (isOutOfBounds(arr, i) || isOutOfBounds(arr, j)) {
             throw new IndexOutOfBoundsException();
-        };
+        }
+        if (i == j) {
+            return;
+        }
+        T valueI = arr[i];
+        T valueJ = arr[j];
+        arr[i] = valueJ;
+        arr[j] = valueI;
     }
 }
