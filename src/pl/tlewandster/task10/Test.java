@@ -13,6 +13,7 @@ public class Test {
         test3();
         test4();
         test5();
+        test6();
     }
 
     static void printTestHeading(String heading) {
@@ -105,19 +106,19 @@ public class Test {
         printTestHeading("Test 4.2");
         Integer[] exampleArr2 = {5, 5, -1, 10, 10};
         System.out.println(Arrays.toString(exampleArr2));
-        Pair<?,?> result2 = MinMax.minMax(exampleArr2);
+        Pair<?, ?> result2 = MinMax.minMax(exampleArr2);
         System.out.printf("min = %s, max = %s%n", result2.first(), result2.second());
 
         printTestHeading("Test 4.3");
         Integer[] exampleArr3 = {42};
         System.out.println(Arrays.toString(exampleArr3));
-        Pair<?,?> result3 = MinMax.minMax(exampleArr3);
+        Pair<?, ?> result3 = MinMax.minMax(exampleArr3);
         System.out.printf("min = %s, max = %s%n", result3.first(), result3.second());
 
         printTestHeading("Test 4.3");
-        Integer[] exampleArr4 = {1,null,2};
+        Integer[] exampleArr4 = {1, null, 2};
         System.out.println(Arrays.toString(exampleArr4));
-        Pair<?,?> result4 = null;
+        Pair<?, ?> result4 = null;
         try {
             result4 = MinMax.minMax(exampleArr4);
             System.out.printf("min = %s, max = %s%n", result4.first(), result4.second());
@@ -136,8 +137,32 @@ public class Test {
         System.out.println("lastIndexOf('a') = " + ArrayUtils.lastIndexOf(example1, "a"));
 
         printTestHeading("Test 5.2");
-        String[] example2 = {"x","y"};
+        String[] example2 = {"x", "y"};
         System.out.println(Arrays.toString(example2));
         System.out.println("indexOf('zzz') = " + ArrayUtils.indexOf(example2, "zzz"));
+    }
+
+    static void test6() {
+        printTestHeading("Test 6.1");
+        Integer[] arrA = {1, null, 3};
+        Integer[] arrB = {1, null, 3};
+        System.out.println("arrA = " + Arrays.toString(arrA));
+        System.out.println("arrB = " + Arrays.toString(arrB));
+        System.out.println("arraysEqual(arrA, arrB) = " + ArrayUtils.arraysEqual(arrA, arrB));
+
+        printTestHeading("Test 6.2");
+        Integer[] arrC = {1, 2, 3};
+        System.out.println("arrA = " + Arrays.toString(arrA));
+        System.out.println("arrC = " + Arrays.toString(arrC));
+        System.out.println("arraysEqual(arrA, arrC) = " + ArrayUtils.arraysEqual(arrA, arrC));
+
+        printTestHeading("Test 6.3");
+        String[] arrD = {"x"};
+        String[] arrE = {null};
+
+        System.out.println("arrD = " + Arrays.toString(arrD));
+        System.out.println("arrE = " + Arrays.toString(arrE));
+        System.out.println("arraysEqual(arrD, arrE) = " + ArrayUtils.arraysEqual(arrD, arrE));
+        System.out.println("arraysEqual(null, null) = " + ArrayUtils.arraysEqual(null, null));
     }
 }
