@@ -60,7 +60,7 @@ public class Test {
         }
 
         printTestHeading("Test 2.3");
-        arr = new String[] {"X", "Y"};
+        arr = new String[]{"X", "Y"};
         ArrayUtils.swap(arr, 1, 1);
         System.out.println(Arrays.toString(arr));
     }
@@ -74,8 +74,8 @@ public class Test {
         System.out.println("integerStats.variance() = " + integerStats.variance());
 
         printTestHeading("Test 3.2");
-        Double[] data1 = {2.0,2.0};
-        Double[] data2 = {2.001,1.999};
+        Double[] data1 = {2.0, 2.0};
+        Double[] data2 = {2.001, 1.999};
         double eps = 0.01;
         System.out.println("data1 = " + Arrays.toString(data1));
         System.out.println("data2 = " + Arrays.toString(data2));
@@ -86,7 +86,12 @@ public class Test {
 
         printTestHeading("Test3.3");
         Integer[] empty = {};
-        Stats<Integer> emptyStats = new Stats<>(empty);
+        try {
+            Stats<Integer> emptyStats = new Stats<>(empty);
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
 
 
 
