@@ -55,4 +55,19 @@ public final class ArrayUtils {
         }
         return -1;
     }
+
+    public static <T> boolean arraysEqual(T[] firstArray, T[] secondArray) {
+        // true jeśli: ten sam rozmiar i każdy element pary firstArr[i] oraz secondArray[i] jest równy (== dla null, equals dla nie-null)
+        if (firstArray == null && secondArray == null) return true;
+        if (!(firstArray != null && secondArray != null)) return false;
+        if (firstArray.length != secondArray.length) return false;
+        for (int i = 0; i < firstArray.length; i++) {
+            if (firstArray[i] == null) {
+                if (secondArray[i] != null) return false;
+            } else {
+                if (!(firstArray[i].equals(secondArray[i]))) return false;
+            }
+        }
+        return true;
+    }
 }
