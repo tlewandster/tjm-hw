@@ -23,4 +23,36 @@ public final class ArrayUtils {
         arr[i] = valueJ;
         arr[j] = valueI;
     }
+
+    public static <T> int indexOf(T[] arr, T value) {
+        // pierwszy indeks wystąpienia; brak → -1
+        for (int i = 0; i < arr.length; i++) {
+            if (value == null) {
+                if (arr[i] == null) {
+                    return i;
+                }
+            } else {
+                if (value.equals(arr[i])) {
+                    return i;
+                }
+            }
+        }
+        return -1;
+    }
+
+    public static <T> int lastIndexOf(T[] arr, T value) {
+        // ostatni indeks wystąpienia; brak → -1
+        for (int i = arr.length - 1; i >= 0; i--) {
+            if (value == null) {
+                if (arr[i] == null) {
+                    return i;
+                }
+            } else {
+                if (arr[i].equals(value)) {
+                    return i;
+                }
+            }
+        }
+        return -1;
+    }
 }
