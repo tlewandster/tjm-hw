@@ -15,24 +15,18 @@ public final class Stats<T extends Number> {
 
     public double mean() {
         /* średnia arytmetyczna */
-        double sum = Arrays.stream(this.data)
-                .mapToDouble(Number::doubleValue)
-                .sum();
+        double sum = Arrays.stream(this.data).mapToDouble(Number::doubleValue).sum();
         return sum / data.length;
     }
 
     public double variance() {
         /* wariancja populacyjna */
         double mean = this.mean();
-        return  Arrays.stream(this.data)
-                .mapToDouble(Number::doubleValue)
-                .map((el) -> el - mean)
-                .map((el) -> el * el)
-                .sum() / this.data.length;
+        return Arrays.stream(this.data).mapToDouble(Number::doubleValue).map((el) -> el - mean).map((el) -> el * el).sum() / this.data.length;
     }
 
     public boolean hasSameMean(Stats<?> other, double eps) {
         /* |m1-m2| <= eps */
-        return Math.abs(this.mean()-other.mean())<= eps;
+        return Math.abs(this.mean() - other.mean()) <= eps;
     }
 }

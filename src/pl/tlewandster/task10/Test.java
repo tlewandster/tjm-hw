@@ -167,7 +167,7 @@ public class Test {
         System.out.println("arraysEqual(null, null) = " + ArrayUtils.arraysEqual(null, null));
     }
 
-    static void test7(){
+    static void test7() {
         printTestHeading("Test 7.1");
         Triple<String, Integer, Boolean> exampleTriple1 = Triple.of("id", 42, true);
         Triple<String, Integer, Boolean> exampleTriple2 = Triple.of("id", 42, true);
