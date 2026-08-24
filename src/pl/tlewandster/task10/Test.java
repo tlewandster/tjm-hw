@@ -10,6 +10,7 @@ public class Test {
     static void main() {
         test1();
         test2();
+        test3();
     }
 
     static void printTestHeading(String heading) {
@@ -62,6 +63,32 @@ public class Test {
         arr = new String[] {"X", "Y"};
         ArrayUtils.swap(arr, 1, 1);
         System.out.println(Arrays.toString(arr));
+    }
+
+    static void test3() {
+        printTestHeading("Test 3.1");
+        Integer[] data = {1, 2, 3, 4};
+        System.out.println("data = " + Arrays.toString(data));
+        Stats<Number> integerStats = new Stats<>(data);
+        System.out.println("integerStats.mean() = " + integerStats.mean());
+        System.out.println("integerStats.variance() = " + integerStats.variance());
+
+        printTestHeading("Test 3.2");
+        Double[] data1 = {2.0,2.0};
+        Double[] data2 = {2.001,1.999};
+        double eps = 0.01;
+        System.out.println("data1 = " + Arrays.toString(data1));
+        System.out.println("data2 = " + Arrays.toString(data2));
+        System.out.println("eps = " + eps);
+        Stats<Number> data1Stats = new Stats<>(data1);
+        Stats<Number> data2Stats = new Stats<>(data2);
+        System.out.println("data1Stats.hasSameMean(data2Stats,eps) = " + data1Stats.hasSameMean(data2Stats, eps));
+
+        printTestHeading("Test3.3");
+        Integer[] empty = {};
+        Stats<Integer> emptyStats = new Stats<>(empty);
+
+
 
     }
 }
