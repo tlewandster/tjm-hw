@@ -14,6 +14,7 @@ public class Test {
         test4();
         test5();
         test6();
+        test7();
     }
 
     static void printTestHeading(String heading) {
@@ -164,5 +165,26 @@ public class Test {
         System.out.println("arrE = " + Arrays.toString(arrE));
         System.out.println("arraysEqual(arrD, arrE) = " + ArrayUtils.arraysEqual(arrD, arrE));
         System.out.println("arraysEqual(null, null) = " + ArrayUtils.arraysEqual(null, null));
+    }
+
+    static void test7(){
+        printTestHeading("Test 7.1");
+        Triple<String, Integer, Boolean> exampleTriple1 = Triple.of("id", 42, true);
+        Triple<String, Integer, Boolean> exampleTriple2 = Triple.of("id", 42, true);
+        Triple<String, Integer, Boolean> exampleTriple3 = Triple.of("id", 43, true);
+        System.out.println("t1 = " + exampleTriple1);
+        System.out.println("t2 = " + exampleTriple2);
+        System.out.println("t3 = " + exampleTriple3);
+        System.out.println("t1.equals(t2) = " + exampleTriple1.equals(exampleTriple2));
+        System.out.println("t1.equals(t3) = " + exampleTriple1.equals(exampleTriple3));
+
+        printTestHeading("Test 7.2");
+        System.out.println("t1.first() = " + exampleTriple1.first());
+        System.out.println("t1.second() = " + exampleTriple1.second());
+        System.out.println("t1.third() = " + exampleTriple1.third());
+
+        printTestHeading("Test 7.3");
+        Triple<String, String, String> exampleTriple = Triple.of("A", "B", "C");
+        System.out.println("exampleTriple = " + exampleTriple);
     }
 }
