@@ -11,6 +11,7 @@ public class Test {
         test1();
         test2();
         test3();
+        test4();
     }
 
     static void printTestHeading(String heading) {
@@ -93,7 +94,34 @@ public class Test {
         }
     }
 
+    static void test4() {
+        printTestHeading("Test 4.1");
+        String[] exampleArr1 = {"aa", "b", "ccc"};
+        System.out.println(Arrays.toString(exampleArr1));
+        Pair<?, ?> result1 = MinMax.minMax(exampleArr1);
+        System.out.printf("min = %s, max = %s%n", result1.first(), result1.second());
 
+        printTestHeading("Test 4.2");
+        Integer[] exampleArr2 = {5, 5, -1, 10, 10};
+        System.out.println(Arrays.toString(exampleArr2));
+        Pair<?,?> result2 = MinMax.minMax(exampleArr2);
+        System.out.printf("min = %s, max = %s%n", result2.first(), result2.second());
 
+        printTestHeading("Test 4.3");
+        Integer[] exampleArr3 = {42};
+        System.out.println(Arrays.toString(exampleArr3));
+        Pair<?,?> result3 = MinMax.minMax(exampleArr3);
+        System.out.printf("min = %s, max = %s%n", result3.first(), result3.second());
+
+        printTestHeading("Test 4.3");
+        Integer[] exampleArr4 = {1,null,2};
+        System.out.println(Arrays.toString(exampleArr4));
+        Pair<?,?> result4 = null;
+        try {
+            result4 = MinMax.minMax(exampleArr4);
+            System.out.printf("min = %s, max = %s%n", result4.first(), result4.second());
+        } catch (Exception e) {
+            System.out.println(e);
+        }
     }
 }
