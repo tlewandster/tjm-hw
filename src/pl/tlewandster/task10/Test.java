@@ -12,6 +12,7 @@ public class Test {
         test2();
         test3();
         test4();
+        test5();
     }
 
     static void printTestHeading(String heading) {
@@ -123,5 +124,20 @@ public class Test {
         } catch (Exception e) {
             System.out.println(e);
         }
+    }
+
+    static void test5() {
+        printTestHeading("Test 5.1");
+        String[] example1 = {null, "a", null, "b", "a"};
+        System.out.println(Arrays.toString(example1));
+        System.out.println("indexOf(null) = " + ArrayUtils.indexOf(example1, null));
+        System.out.println("lastIndexOf(null) = " + ArrayUtils.lastIndexOf(example1, null));
+        System.out.println("indexOf('a') = " + ArrayUtils.indexOf(example1, "a"));
+        System.out.println("lastIndexOf('a') = " + ArrayUtils.lastIndexOf(example1, "a"));
+
+        printTestHeading("Test 5.2");
+        String[] example2 = {"x","y"};
+        System.out.println(Arrays.toString(example2));
+        System.out.println("indexOf('zzz') = " + ArrayUtils.indexOf(example2, "zzz"));
     }
 }
