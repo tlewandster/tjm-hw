@@ -4,11 +4,17 @@ import pl.tlewandster.task10.Pair;
 
 import java.util.*;
 
-public class NestedTwoKeyHashMap<K1, K2, V> implements TwoKeyMap<K1, K2, V>{
+public class NestedTwoKeyHashMap<K1, K2, V> implements TwoKeyMap<K1, K2, V> {
+
+    private final Map<K1, Map<K2, V>> outerMap = new HashMap<>();
+    private final Map<K2, V> innerMap = new HashMap<>();
+
 
     @Override
     public V put(K1 k1, K2 k2, V value) {
-        return null;
+        innerMap.put(k2, value);
+        outerMap.put(k1, innerMap);
+        return value;
     }
 
     @Override
@@ -79,5 +85,10 @@ public class NestedTwoKeyHashMap<K1, K2, V> implements TwoKeyMap<K1, K2, V>{
     @Override
     public Iterator<Entry<K1, K2, V>> iterator() {
         return null;
+    }
+
+    @Override
+    public String toString() {
+        return outerMap.toString();
     }
 }
