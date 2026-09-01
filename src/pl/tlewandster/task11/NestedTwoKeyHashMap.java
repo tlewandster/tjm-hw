@@ -39,12 +39,12 @@ public class NestedTwoKeyHashMap<K1, K2, V> implements TwoKeyMap<K1, K2, V> {
 
     @Override
     public int size() {
-        return 0;
+        return map.size();
     }
 
     @Override
     public boolean isEmpty() {
-        return false;
+        return map.isEmpty();
     }
 
     @Override
