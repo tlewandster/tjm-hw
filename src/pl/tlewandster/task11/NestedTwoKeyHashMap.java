@@ -17,7 +17,7 @@ public class NestedTwoKeyHashMap<K1, K2, V> implements TwoKeyMap<K1, K2, V> {
 
     @Override
     public V get(K1 k1, K2 k2) {
-        return null;
+        return map.get(k1).get(k2);
     }
 
     @Override
