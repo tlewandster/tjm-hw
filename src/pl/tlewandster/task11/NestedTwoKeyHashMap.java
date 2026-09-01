@@ -34,7 +34,7 @@ public class NestedTwoKeyHashMap<K1, K2, V> implements TwoKeyMap<K1, K2, V> {
 
     @Override
     public boolean containsValue(V value) {
-        return false;
+        return map.values().stream().anyMatch(innerMap -> innerMap.containsValue(value));
     }
 
     @Override
