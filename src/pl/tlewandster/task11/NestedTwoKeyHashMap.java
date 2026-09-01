@@ -6,14 +6,12 @@ import java.util.*;
 
 public class NestedTwoKeyHashMap<K1, K2, V> implements TwoKeyMap<K1, K2, V> {
 
-    private final Map<K1, Map<K2, V>> outerMap = new HashMap<>();
-    private final Map<K2, V> innerMap = new HashMap<>();
+    private final Map<K1, Map<K2, V>> map = new HashMap<>();
 
 
     @Override
     public V put(K1 k1, K2 k2, V value) {
-        innerMap.put(k2, value);
-        outerMap.put(k1, innerMap);
+        map.computeIfAbsent(k1, k -> new HashMap<>()).put(k2,value);
         return value;
     }
 
@@ -89,6 +87,6 @@ public class NestedTwoKeyHashMap<K1, K2, V> implements TwoKeyMap<K1, K2, V> {
 
     @Override
     public String toString() {
-        return outerMap.toString();
+        return map.toString();
     }
 }

@@ -14,7 +14,9 @@ public class Main {
 
     private static void tests() {
         TwoKeyMap<String,String,Integer> someTwoKeyMap = new NestedTwoKeyHashMap<>();
-        someTwoKeyMap.put("A","B",1);
+        System.out.println(someTwoKeyMap.put("A","B",1));
+        System.out.println(someTwoKeyMap.put("B","B",1));
+        System.out.println(someTwoKeyMap.put("B","A",1));
         System.out.println(someTwoKeyMap);
     }
 }
