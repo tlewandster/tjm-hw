@@ -30,5 +30,6 @@ public class Main {
         System.out.println(someTwoKeyMap.containsKeys("B", "A"));
         System.out.println(someTwoKeyMap.containsValue(5));
         System.out.println(someTwoKeyMap.containsValue(3));
+        System.out.println(someTwoKeyMap.entrySet().toString());
     }
 }
