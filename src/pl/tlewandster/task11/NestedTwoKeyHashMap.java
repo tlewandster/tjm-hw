@@ -91,17 +91,23 @@ public class NestedTwoKeyHashMap<K1, K2, V> implements TwoKeyMap<K1, K2, V> {
 
     @Override
     public Collection<V> values() {
-        return List.of();
+        List<V> values = new ArrayList<>();
+        for (Map<K2, V> innerMap : map.values()) {
+            values.addAll(innerMap.values());
+        }
+        return values;
     }
 
     @Override
     public void putAll(TwoKeyMap<? extends K1, ? extends K2, ? extends V> other) {
-
+        for (Entry<? extends K1, ? extends K2, ? extends V> otherEntry : other) {
+            put(otherEntry.getKey1(), otherEntry.getKey2(), otherEntry.getValue());
+        }
     }
 
     @Override
     public void clear() {
-
+        map.clear();
     }
 
     @Override

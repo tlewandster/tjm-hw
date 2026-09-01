@@ -2,6 +2,8 @@ package pl.tlewandster.task11;
 
 import pl.tlewandster.task10.Pair;
 
+import java.util.Map;
+
 public interface TwoKeyMap<K1, K2, V> extends Iterable<TwoKeyMap.Entry<K1, K2, V>> {
     // podstawowe operacje
     V put(K1 k1, K2 k2, V value);
