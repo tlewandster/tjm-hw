@@ -77,8 +77,16 @@ public class NestedTwoKeyHashMap<K1, K2, V> implements TwoKeyMap<K1, K2, V> {
     }
 
     @Override
-    public Set<Pair<K1, K2>> keySet() {
-        return Set.of();
+    public Set<Pair<K1, K2>> keySet() { //typ Pair z tasku 10
+        Set<Pair<K1, K2>> keys = new HashSet<>();
+        for (Map.Entry<K1, Map<K2, V>> mapEntry : map.entrySet()) {
+            K1 key1 = mapEntry.getKey();
+            for (Map.Entry<K2, V> innerEntry : mapEntry.getValue().entrySet()) {
+                K2 key2 = innerEntry.getKey();
+                keys.add(new Pair<>(key1, key2));
+            }
+        }
+        return keys;
     }
 
     @Override
