@@ -29,7 +29,7 @@ public class NestedTwoKeyHashMap<K1, K2, V> implements TwoKeyMap<K1, K2, V> {
 
     @Override
     public boolean containsKeys(K1 k1, K2 k2) {
-        return false;
+        return map.get(k1).containsKey(k2);
     }
 
     @Override
