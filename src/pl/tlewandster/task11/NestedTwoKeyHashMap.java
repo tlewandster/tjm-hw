@@ -10,10 +10,14 @@ public class NestedTwoKeyHashMap<K1, K2, V> implements TwoKeyMap<K1, K2, V> {
 
 
     @Override
-    public V put(K1 k1, K2 k2, V value) {
+    public V put(K1 key1, K2 key2, V value) {
+        Objects.requireNonNull(key1, "Key key1 cannot be null");
+        Objects.requireNonNull(key2, "Key key2 cannot be null");
+        Objects.requireNonNull(value, "Value cannot be null");
+
         HashMap<K2, V> innerMap = new HashMap<>();
-        innerMap.put(k2, value);
-        map.put(k1, innerMap);
+        innerMap.put(key2, value);
+        map.put(key1, innerMap);
         return value;
     }
 
