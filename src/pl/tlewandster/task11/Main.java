@@ -1,5 +1,7 @@
 package pl.tlewandster.task11;
 
+import java.sql.SQLOutput;
+
 public class Main {
     static void main() {
 
@@ -20,6 +22,15 @@ public class Main {
         System.out.println(someTwoKeyMap);
         System.out.println(someTwoKeyMap.get("A", "B"));
         System.out.println(someTwoKeyMap.get("B", "B"));
-        System.out.println(someTwoKeyMap.get("B", "C"));
+        System.out.println(someTwoKeyMap.get("B", "A"));
+        System.out.println(someTwoKeyMap.remove("A","B"));
+        System.out.println(someTwoKeyMap);
+        System.out.println(someTwoKeyMap.containsKeys("A", "B"));
+        System.out.println(someTwoKeyMap.containsKeys("B", "B"));
+        System.out.println(someTwoKeyMap.containsKeys("B", "A"));
+        System.out.println(someTwoKeyMap.containsValue(5));
+        System.out.println(someTwoKeyMap.containsValue(3));
+
+
     }
 }
