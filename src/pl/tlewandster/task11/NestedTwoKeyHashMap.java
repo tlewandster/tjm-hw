@@ -11,7 +11,9 @@ public class NestedTwoKeyHashMap<K1, K2, V> implements TwoKeyMap<K1, K2, V> {
 
     @Override
     public V put(K1 k1, K2 k2, V value) {
-        map.computeIfAbsent(k1, k -> new HashMap<>()).put(k2,value);
+        HashMap<K2, V> innerMap = new HashMap<>();
+        innerMap.put(k2, value);
+        map.put(k1, innerMap);
         return value;
     }
 
