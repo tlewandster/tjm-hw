@@ -22,22 +22,33 @@ public class NestedTwoKeyHashMap<K1, K2, V> implements TwoKeyMap<K1, K2, V> {
     }
 
     @Override
-    public V get(K1 k1, K2 k2) {
-        return map.get(k1).get(k2);
+    public V get(K1 key1, K2 key2) {
+        Objects.requireNonNull(key1, "Key key1 cannot be null");
+        Objects.requireNonNull(key2, "Key key2 cannot be null");
+
+        return map.get(key1).get(key2);
     }
 
     @Override
-    public V remove(K1 k1, K2 k2) {
-        return map.get(k1).remove(k2);
+    public V remove(K1 key1, K2 key2) {
+        Objects.requireNonNull(key1, "Key key1 cannot be null");
+        Objects.requireNonNull(key2, "Key key2 cannot be null");
+
+        return map.get(key1).remove(key2);
     }
 
     @Override
-    public boolean containsKeys(K1 k1, K2 k2) {
-        return map.get(k1).containsKey(k2);
+    public boolean containsKeys(K1 key1, K2 key2) {
+        Objects.requireNonNull(key1, "Key key1 cannot be null");
+        Objects.requireNonNull(key2, "Key key2 cannot be null");
+
+        return map.get(key1).containsKey(key2);
     }
 
     @Override
     public boolean containsValue(V value) {
+        Objects.requireNonNull(value, "Value cannot be null");
+
         return map.values().stream().anyMatch(innerMap -> innerMap.containsValue(value));
     }
 
