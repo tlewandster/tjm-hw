@@ -116,8 +116,14 @@ public class NestedTwoKeyHashMap<K1, K2, V> implements TwoKeyMap<K1, K2, V> {
     }
 
     @Override
-    public Map<K1, V> column(K2 k2) {
-        return Map.of();
+    public Map<K1, V> column(K2 key2) {
+        Map<K1,V> columnsMap = new HashMap<>();
+        for (Entry<K1,K2,V> entry : entrySet()) {
+            if (entry.getKey2().equals(key2)){
+                columnsMap.put(entry.getKey1(), entry.getValue());
+            }
+        }
+        return columnsMap;
     }
 
     @Override
