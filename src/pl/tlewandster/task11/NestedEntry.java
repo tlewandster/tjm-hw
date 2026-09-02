@@ -2,7 +2,7 @@ package pl.tlewandster.task11;
 
 import java.util.Objects;
 
-class NestedEntry<K1, K2, V> implements TwoKeyMap.Entry<K1, K2, V>{
+class NestedEntry<K1, K2, V> implements TwoKeyMap.Entry<K1, K2, V> {
 
     private final K1 key1;
     private final K2 key2;
@@ -37,4 +37,8 @@ class NestedEntry<K1, K2, V> implements TwoKeyMap.Entry<K1, K2, V>{
         return value;
     }
 
+    @Override
+    public String toString() {
+        return "{" + "key1=" + key1 + ", key2=" + key2 + ", value=" + value + '}';
+    }
 }

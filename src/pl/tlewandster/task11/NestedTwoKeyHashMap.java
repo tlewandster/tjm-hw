@@ -8,18 +8,24 @@ public class NestedTwoKeyHashMap<K1, K2, V> implements TwoKeyMap<K1, K2, V> {
 
     private final Map<K1, Map<K2, V>> map = new HashMap<>();
 
-
     @Override
     public V put(K1 key1, K2 key2, V value) {
         Objects.requireNonNull(key1, "Key key1 cannot be null");
         Objects.requireNonNull(key2, "Key key2 cannot be null");
         Objects.requireNonNull(value, "Value cannot be null");
 
+        V oldValue = null;
+        for (Entry<K1,K2,V> entry : entrySet()) {
+            if (entry.getKey1().equals(key1) && entry.getKey2().equals(key2)) {
+                oldValue = entry.getValue();
+            }
+        }
         HashMap<K2, V> innerMap = new HashMap<>();
         innerMap.put(key2, value);
         map.put(key1, innerMap);
-        return value;
+        return oldValue;
     }
+
 
     @Override
     public V get(K1 key1, K2 key2) {
@@ -123,9 +129,9 @@ public class NestedTwoKeyHashMap<K1, K2, V> implements TwoKeyMap<K1, K2, V> {
     public Map<K1, V> column(K2 key2) {
         Objects.requireNonNull(key2, "Key key2 cannot be null");
 
-        Map<K1,V> columnsMap = new HashMap<>();
-        for (Entry<K1,K2,V> entry : entrySet()) {
-            if (entry.getKey2().equals(key2)){
+        Map<K1, V> columnsMap = new HashMap<>();
+        for (Entry<K1, K2, V> entry : entrySet()) {
+            if (entry.getKey2().equals(key2)) {
                 columnsMap.put(entry.getKey1(), entry.getValue());
             }
         }
@@ -139,6 +145,6 @@ public class NestedTwoKeyHashMap<K1, K2, V> implements TwoKeyMap<K1, K2, V> {
 
     @Override
     public String toString() {
-        return map.toString();
+        return entrySet().toString();
     }
 }
