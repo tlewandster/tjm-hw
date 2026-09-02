@@ -111,8 +111,8 @@ public class NestedTwoKeyHashMap<K1, K2, V> implements TwoKeyMap<K1, K2, V> {
     }
 
     @Override
-    public Map<K2, V> row(K1 k1) {
-        return Map.of();
+    public Map<K2, V> row(K1 key1) {
+        return map.get(key1);
     }
 
     @Override
