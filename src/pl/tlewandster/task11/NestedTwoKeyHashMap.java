@@ -100,6 +100,8 @@ public class NestedTwoKeyHashMap<K1, K2, V> implements TwoKeyMap<K1, K2, V> {
 
     @Override
     public void putAll(TwoKeyMap<? extends K1, ? extends K2, ? extends V> other) {
+        Objects.requireNonNull(other, "Other map cannot be null");
+
         for (Entry<? extends K1, ? extends K2, ? extends V> otherEntry : other) {
             put(otherEntry.getKey1(), otherEntry.getKey2(), otherEntry.getValue());
         }
@@ -112,11 +114,15 @@ public class NestedTwoKeyHashMap<K1, K2, V> implements TwoKeyMap<K1, K2, V> {
 
     @Override
     public Map<K2, V> row(K1 key1) {
+        Objects.requireNonNull(key1, "Key key1 cannot be null");
+
         return map.get(key1);
     }
 
     @Override
     public Map<K1, V> column(K2 key2) {
+        Objects.requireNonNull(key2, "Key key2 cannot be null");
+
         Map<K1,V> columnsMap = new HashMap<>();
         for (Entry<K1,K2,V> entry : entrySet()) {
             if (entry.getKey2().equals(key2)){
