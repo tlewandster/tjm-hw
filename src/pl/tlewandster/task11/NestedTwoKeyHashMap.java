@@ -122,7 +122,7 @@ public class NestedTwoKeyHashMap<K1, K2, V> implements TwoKeyMap<K1, K2, V> {
 
     @Override
     public Iterator<Entry<K1, K2, V>> iterator() {
-        return null;
+        return entrySet().iterator();
     }
 
     @Override
