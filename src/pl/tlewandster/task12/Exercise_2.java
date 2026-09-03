@@ -3,7 +3,7 @@ package pl.tlewandster.task12;
 import java.util.Arrays;
 import java.util.function.Function;
 
-public class Exercise_B1 {
+public class Exercise_2 {
     static void main() {
         Function<String, String> trim = String::trim;
         Function<String, String> toLowerCase = String::toLowerCase;
